@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.OrderdetailMapper">
+  <resultMap id="BaseResultMap" type="com.qf.bean.Orderdetail">
+    <id column="deatilid" jdbcType="INTEGER" property="deatilid" />
+    <result column="oederid" jdbcType="INTEGER" property="oederid" />
+    <result column="shopid" jdbcType="INTEGER" property="shopid" />
+    <result column="shopnum" jdbcType="INTEGER" property="shopnum" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    deatilid, oederid, shopid, shopnum
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from orderdetail
+    where deatilid = #{deatilid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from orderdetail
+    where deatilid = #{deatilid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.bean.Orderdetail">
+    insert into orderdetail (deatilid, oederid, shopid, 
+      shopnum)
+    values (#{deatilid,jdbcType=INTEGER}, #{oederid,jdbcType=INTEGER}, #{shopid,jdbcType=INTEGER}, 
+      #{shopnum,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.bean.Orderdetail">
+    insert into orderdetail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deatilid != null">
+        deatilid,
+      </if>
+      <if test="oederid != null">
+        oederid,
+      </if>
+      <if test="shopid != null">
+        shopid,
+      </if>
+      <if test="shopnum != null">
+        shopnum,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deatilid != null">
+        #{deatilid,jdbcType=INTEGER},
+      </if>
+      <if test="oederid != null">
+        #{oederid,jdbcType=INTEGER},
+      </if>
+      <if test="shopid != null">
+        #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="shopnum != null">
+        #{shopnum,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.bean.Orderdetail">
+    update orderdetail
+    <set>
+      <if test="oederid != null">
+        oederid = #{oederid,jdbcType=INTEGER},
+      </if>
+      <if test="shopid != null">
+        shopid = #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="shopnum != null">
+        shopnum = #{shopnum,jdbcType=INTEGER},
+      </if>
+    </set>
+    where deatilid = #{deatilid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.bean.Orderdetail">
+    update orderdetail
+    set oederid = #{oederid,jdbcType=INTEGER},
+      shopid = #{shopid,jdbcType=INTEGER},
+      shopnum = #{shopnum,jdbcType=INTEGER}
+    where deatilid = #{deatilid,jdbcType=INTEGER}
+  </update>
+</mapper>

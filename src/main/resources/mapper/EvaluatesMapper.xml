@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.EvaluatesMapper">
+  <resultMap id="BaseResultMap" type="com.qf.bean.Evaluates">
+    <id column="evaluateid" jdbcType="INTEGER" property="evaluateid" />
+    <result column="shopid" jdbcType="INTEGER" property="shopid" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="evaluateimage" jdbcType="VARCHAR" property="evaluateimage" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    evaluateid, shopid, userid, evaluateimage, content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from evaluates
+    where evaluateid = #{evaluateid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from evaluates
+    where evaluateid = #{evaluateid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.bean.Evaluates">
+    insert into evaluates (evaluateid, shopid, userid, 
+      evaluateimage, content)
+    values (#{evaluateid,jdbcType=INTEGER}, #{shopid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, 
+      #{evaluateimage,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.bean.Evaluates">
+    insert into evaluates
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="evaluateid != null">
+        evaluateid,
+      </if>
+      <if test="shopid != null">
+        shopid,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="evaluateimage != null">
+        evaluateimage,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="evaluateid != null">
+        #{evaluateid,jdbcType=INTEGER},
+      </if>
+      <if test="shopid != null">
+        #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="evaluateimage != null">
+        #{evaluateimage,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.bean.Evaluates">
+    update evaluates
+    <set>
+      <if test="shopid != null">
+        shopid = #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="evaluateimage != null">
+        evaluateimage = #{evaluateimage,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where evaluateid = #{evaluateid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.bean.Evaluates">
+    update evaluates
+    set shopid = #{shopid,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=INTEGER},
+      evaluateimage = #{evaluateimage,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR}
+    where evaluateid = #{evaluateid,jdbcType=INTEGER}
+  </update>
+</mapper>
