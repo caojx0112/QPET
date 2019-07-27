@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.OrdersMapper">
+  <resultMap id="BaseResultMap" type="com.qf.bean.Orders">
+    <id column="orderid" jdbcType="INTEGER" property="orderid" />
+    <result column="addressid" jdbcType="INTEGER" property="addressid" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="couponsid" jdbcType="INTEGER" property="couponsid" />
+    <result column="emoney" jdbcType="INTEGER" property="emoney" />
+    <result column="orderamount" jdbcType="DOUBLE" property="orderamount" />
+    <result column="orderstatus" jdbcType="INTEGER" property="orderstatus" />
+    <result column="paystatus" jdbcType="INTEGER" property="paystatus" />
+    <result column="orderdesc" jdbcType="VARCHAR" property="orderdesc" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="expirationtime" jdbcType="TIMESTAMP" property="expirationtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    orderid, addressid, userid, couponsid, emoney, orderamount, orderstatus, paystatus, 
+    orderdesc, createtime, expirationtime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from orders
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from orders
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.bean.Orders">
+    insert into orders (orderid, addressid, userid, 
+      couponsid, emoney, orderamount, 
+      orderstatus, paystatus, orderdesc, 
+      createtime, expirationtime)
+    values (#{orderid,jdbcType=INTEGER}, #{addressid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, 
+      #{couponsid,jdbcType=INTEGER}, #{emoney,jdbcType=INTEGER}, #{orderamount,jdbcType=DOUBLE}, 
+      #{orderstatus,jdbcType=INTEGER}, #{paystatus,jdbcType=INTEGER}, #{orderdesc,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{expirationtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.bean.Orders">
+    insert into orders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderid != null">
+        orderid,
+      </if>
+      <if test="addressid != null">
+        addressid,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="couponsid != null">
+        couponsid,
+      </if>
+      <if test="emoney != null">
+        emoney,
+      </if>
+      <if test="orderamount != null">
+        orderamount,
+      </if>
+      <if test="orderstatus != null">
+        orderstatus,
+      </if>
+      <if test="paystatus != null">
+        paystatus,
+      </if>
+      <if test="orderdesc != null">
+        orderdesc,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="expirationtime != null">
+        expirationtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderid != null">
+        #{orderid,jdbcType=INTEGER},
+      </if>
+      <if test="addressid != null">
+        #{addressid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="couponsid != null">
+        #{couponsid,jdbcType=INTEGER},
+      </if>
+      <if test="emoney != null">
+        #{emoney,jdbcType=INTEGER},
+      </if>
+      <if test="orderamount != null">
+        #{orderamount,jdbcType=DOUBLE},
+      </if>
+      <if test="orderstatus != null">
+        #{orderstatus,jdbcType=INTEGER},
+      </if>
+      <if test="paystatus != null">
+        #{paystatus,jdbcType=INTEGER},
+      </if>
+      <if test="orderdesc != null">
+        #{orderdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expirationtime != null">
+        #{expirationtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.bean.Orders">
+    update orders
+    <set>
+      <if test="addressid != null">
+        addressid = #{addressid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="couponsid != null">
+        couponsid = #{couponsid,jdbcType=INTEGER},
+      </if>
+      <if test="emoney != null">
+        emoney = #{emoney,jdbcType=INTEGER},
+      </if>
+      <if test="orderamount != null">
+        orderamount = #{orderamount,jdbcType=DOUBLE},
+      </if>
+      <if test="orderstatus != null">
+        orderstatus = #{orderstatus,jdbcType=INTEGER},
+      </if>
+      <if test="paystatus != null">
+        paystatus = #{paystatus,jdbcType=INTEGER},
+      </if>
+      <if test="orderdesc != null">
+        orderdesc = #{orderdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expirationtime != null">
+        expirationtime = #{expirationtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.bean.Orders">
+    update orders
+    set addressid = #{addressid,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=INTEGER},
+      couponsid = #{couponsid,jdbcType=INTEGER},
+      emoney = #{emoney,jdbcType=INTEGER},
+      orderamount = #{orderamount,jdbcType=DOUBLE},
+      orderstatus = #{orderstatus,jdbcType=INTEGER},
+      paystatus = #{paystatus,jdbcType=INTEGER},
+      orderdesc = #{orderdesc,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      expirationtime = #{expirationtime,jdbcType=TIMESTAMP}
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </update>
+</mapper>
