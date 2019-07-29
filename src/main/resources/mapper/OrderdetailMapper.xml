@@ -3,7 +3,7 @@
 <mapper namespace="com.qf.dao.OrderdetailMapper">
   <resultMap id="BaseResultMap" type="com.qf.bean.Orderdetail">
     <id column="deatilid" jdbcType="INTEGER" property="deatilid" />
-    <result column="oederid" jdbcType="INTEGER" property="oederid" />
+    <result column="oederid" jdbcType="VARCHAR" property="oederid" />
     <result column="shopid" jdbcType="INTEGER" property="shopid" />
     <result column="shopnum" jdbcType="INTEGER" property="shopnum" />
   </resultMap>
@@ -23,7 +23,7 @@
   <insert id="insert" parameterType="com.qf.bean.Orderdetail">
     insert into orderdetail (deatilid, oederid, shopid, 
       shopnum)
-    values (#{deatilid,jdbcType=INTEGER}, #{oederid,jdbcType=INTEGER}, #{shopid,jdbcType=INTEGER}, 
+    values (#{deatilid,jdbcType=INTEGER}, #{oederid,jdbcType=VARCHAR}, #{shopid,jdbcType=INTEGER}, 
       #{shopnum,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.qf.bean.Orderdetail">
@@ -47,7 +47,7 @@
         #{deatilid,jdbcType=INTEGER},
       </if>
       <if test="oederid != null">
-        #{oederid,jdbcType=INTEGER},
+        #{oederid,jdbcType=VARCHAR},
       </if>
       <if test="shopid != null">
         #{shopid,jdbcType=INTEGER},
@@ -61,7 +61,7 @@
     update orderdetail
     <set>
       <if test="oederid != null">
-        oederid = #{oederid,jdbcType=INTEGER},
+        oederid = #{oederid,jdbcType=VARCHAR},
       </if>
       <if test="shopid != null">
         shopid = #{shopid,jdbcType=INTEGER},
@@ -74,7 +74,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qf.bean.Orderdetail">
     update orderdetail
-    set oederid = #{oederid,jdbcType=INTEGER},
+    set oederid = #{oederid,jdbcType=VARCHAR},
       shopid = #{shopid,jdbcType=INTEGER},
       shopnum = #{shopnum,jdbcType=INTEGER}
     where deatilid = #{deatilid,jdbcType=INTEGER}

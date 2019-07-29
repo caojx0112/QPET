@@ -181,6 +181,12 @@
       <artifactId>joda-time</artifactId>
       <version>2.9.9</version>
     </dependency>
+    <!--处理json-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.15</version>
+    </dependency>
     <!--shiro-->
     <dependency>
       <groupId>org.apache.shiro</groupId>

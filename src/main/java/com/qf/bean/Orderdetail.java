@@ -3,11 +3,31 @@ package com.qf.bean;
 public class Orderdetail {
     private Integer deatilid;
 
-    private Integer oederid;
+    private String oederid;
 
     private Integer shopid;
 
     private Integer shopnum;
+
+    private Shoppes shoppes;
+
+    private Orders orders;
+
+    public Shoppes getShoppes() {
+        return shoppes;
+    }
+
+    public void setShoppes(Shoppes shoppes) {
+        this.shoppes = shoppes;
+    }
+
+    public Orders getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Orders orders) {
+        this.orders = orders;
+    }
 
     public Integer getDeatilid() {
         return deatilid;
@@ -17,12 +37,12 @@ public class Orderdetail {
         this.deatilid = deatilid;
     }
 
-    public Integer getOederid() {
+    public String getOederid() {
         return oederid;
     }
 
-    public void setOederid(Integer oederid) {
-        this.oederid = oederid;
+    public void setOederid(String oederid) {
+        this.oederid = oederid == null ? null : oederid.trim();
     }
 
     public Integer getShopid() {

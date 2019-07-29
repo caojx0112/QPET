@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qf.dao.OrdersMapper">
   <resultMap id="BaseResultMap" type="com.qf.bean.Orders">
-    <id column="orderid" jdbcType="INTEGER" property="orderid" />
+    <id column="orderid" jdbcType="VARCHAR" property="orderid" />
     <result column="addressid" jdbcType="INTEGER" property="addressid" />
     <result column="userid" jdbcType="INTEGER" property="userid" />
     <result column="couponsid" jdbcType="INTEGER" property="couponsid" />
@@ -18,22 +18,22 @@
     orderid, addressid, userid, couponsid, emoney, orderamount, orderstatus, paystatus, 
     orderdesc, createtime, expirationtime
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from orders
-    where orderid = #{orderid,jdbcType=INTEGER}
+    where orderid = #{orderid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from orders
-    where orderid = #{orderid,jdbcType=INTEGER}
+    where orderid = #{orderid,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.qf.bean.Orders">
     insert into orders (orderid, addressid, userid, 
       couponsid, emoney, orderamount, 
       orderstatus, paystatus, orderdesc, 
       createtime, expirationtime)
-    values (#{orderid,jdbcType=INTEGER}, #{addressid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, 
+    values (#{orderid,jdbcType=VARCHAR}, #{addressid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, 
       #{couponsid,jdbcType=INTEGER}, #{emoney,jdbcType=INTEGER}, #{orderamount,jdbcType=DOUBLE}, 
       #{orderstatus,jdbcType=INTEGER}, #{paystatus,jdbcType=INTEGER}, #{orderdesc,jdbcType=VARCHAR}, 
       #{createtime,jdbcType=TIMESTAMP}, #{expirationtime,jdbcType=TIMESTAMP})
@@ -77,7 +77,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="orderid != null">
-        #{orderid,jdbcType=INTEGER},
+        #{orderid,jdbcType=VARCHAR},
       </if>
       <if test="addressid != null">
         #{addressid,jdbcType=INTEGER},
@@ -145,7 +145,7 @@
         expirationtime = #{expirationtime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where orderid = #{orderid,jdbcType=INTEGER}
+    where orderid = #{orderid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qf.bean.Orders">
     update orders
@@ -159,6 +159,6 @@
       orderdesc = #{orderdesc,jdbcType=VARCHAR},
       createtime = #{createtime,jdbcType=TIMESTAMP},
       expirationtime = #{expirationtime,jdbcType=TIMESTAMP}
-    where orderid = #{orderid,jdbcType=INTEGER}
+    where orderid = #{orderid,jdbcType=VARCHAR}
   </update>
 </mapper>

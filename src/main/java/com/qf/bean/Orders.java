@@ -1,9 +1,10 @@
 package com.qf.bean;
 
 import java.util.Date;
+import java.util.List;
 
 public class Orders {
-    private Integer orderid;
+    private String orderid;
 
     private Integer addressid;
 
@@ -25,12 +26,32 @@ public class Orders {
 
     private Date expirationtime;
 
-    public Integer getOrderid() {
+    private List<Orderdetail> orderdetailList;
+
+    private Users users;
+
+    public List<Orderdetail> getOrderdetailList() {
+        return orderdetailList;
+    }
+
+    public void setOrderdetailList(List<Orderdetail> orderdetailList) {
+        this.orderdetailList = orderdetailList;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
+    }
+
+    public String getOrderid() {
         return orderid;
     }
 
-    public void setOrderid(Integer orderid) {
-        this.orderid = orderid;
+    public void setOrderid(String orderid) {
+        this.orderid = orderid == null ? null : orderid.trim();
     }
 
     public Integer getAddressid() {
