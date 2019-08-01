@@ -7,14 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe1a9258-f91e-4fa4-a8c7-ecdd27f4a8f8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qf/bean/UsersCoupons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qf/dao/UsersCouponsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UsersCouponsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/bean/Orderdetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/bean/Orderdetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/bean/Shoppes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/bean/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/bean/Shoppes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/bean/Shoppes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/bean/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/bean/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/dao/OrderdetailMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/dao/OrderdetailMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/dao/OrdersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/dao/OrdersMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/dao/ShoppesMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/dao/UsersMapper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/OrdersService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/OrdersServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/util/DataView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/util/DataView.java" afterDir="false" />
@@ -23,8 +24,8 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderdetailMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderdetailMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrdersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrdersMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShoppesMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UsersMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShoppesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShoppesMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UsersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UsersMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,14 +52,14 @@
         <counts>
           <entry key="java" value="3280" />
           <entry key="properties" value="15" />
-          <entry key="txt" value="57" />
+          <entry key="txt" value="75" />
           <entry key="xml" value="473" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="3280" />
-          <entry key="PLAIN_TEXT" value="57" />
+          <entry key="PLAIN_TEXT" value="75" />
           <entry key="Properties" value="15" />
           <entry key="SQL" value="2" />
           <entry key="XML" value="471" />
@@ -145,8 +146,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/web/OrdersController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="97" column="41" lean-forward="true" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="41" />
+            <state relative-caret-position="162">
+              <caret line="106" column="28" lean-forward="true" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -339,39 +340,6 @@
               <item name="qf" type="462c0819:PsiDirectoryNode" />
               <item name="bean" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Qpet_ssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qpet_ssm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qf" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Qpet_ssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qpet_ssm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qf" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Qpet_ssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qpet_ssm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Qpet_ssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qpet_ssm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -381,7 +349,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564666402806" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564666954427" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Course/ThiredStage/Projrcts/springboot0708" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -577,7 +545,7 @@
       <workItem from="1564195702407" duration="5655000" />
       <workItem from="1564300627152" duration="7752000" />
       <workItem from="1564397266289" duration="5121000" />
-      <workItem from="1564643023795" duration="17748000" />
+      <workItem from="1564643023795" duration="18137000" />
     </task>
     <task id="LOCAL-00001" summary="项目构建">
       <created>1563868316821</created>
@@ -614,16 +582,23 @@
       <option name="project" value="LOCAL" />
       <updated>1564403242474</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修改实体类,完善新建订单功能,订单结算,取消订单,确认收货功能">
+      <created>1564666765261</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1564666765261</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40046000" />
+    <option name="totallyTimeSpent" value="40435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="35" width="1340" height="758" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.240625" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.240625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -645,7 +620,7 @@
       <window_info anchor="bottom" id="Messages" order="10" weight="0.1904" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.4992" />
+      <window_info anchor="bottom" id="Version Control" order="13" visible="true" weight="0.008" />
       <window_info anchor="bottom" id="JRebel Console" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Application Servers" order="15" weight="0.3296" />
       <window_info anchor="bottom" id="JRebel Executor" order="16" />
@@ -676,6 +651,32 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -685,7 +686,8 @@
     <MESSAGE value="创建实体类,以及需要的工具类" />
     <MESSAGE value="重命名xml" />
     <MESSAGE value="修改实体类,完成新建订单功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改实体类,完成新建订单功能" />
+    <MESSAGE value="修改实体类,完善新建订单功能,订单结算,取消订单,确认收货功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改实体类,完善新建订单功能,订单结算,取消订单,确认收货功能" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../../../Course/ThiredStage/曹建雄/test1903/src/main/resources/springmvc.xml">
@@ -963,8 +965,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/web/OrdersController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="97" column="41" lean-forward="true" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="41" />
+        <state relative-caret-position="162">
+          <caret line="106" column="28" lean-forward="true" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
