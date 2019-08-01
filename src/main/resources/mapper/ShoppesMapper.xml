@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.ShoppesMapper">
+  <resultMap id="BaseResultMap" type="com.qf.bean.Shoppes">
+    <id column="shopid" jdbcType="INTEGER" property="shopid" />
+    <result column="shopname" jdbcType="VARCHAR" property="shopname" />
+    <result column="typeid" jdbcType="INTEGER" property="typeid" />
+    <result column="shopnum" jdbcType="INTEGER" property="shopnum" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="oldprice" jdbcType="DOUBLE" property="oldprice" />
+    <result column="newprice" jdbcType="DOUBLE" property="newprice" />
+    <result column="shopimage" jdbcType="VARCHAR" property="shopimage" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="shopstatus" jdbcType="INTEGER" property="shopstatus" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    shopid, shopname, typeid, shopnum, type, oldprice, newprice, shopimage, content, 
+    shopstatus, createtime, updatetime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shoppes
+    where shopid = #{shopid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from shoppes
+    where shopid = #{shopid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.bean.Shoppes">
+    insert into shoppes (shopid, shopname, typeid, 
+      shopnum, type, oldprice, 
+      newprice, shopimage, content, 
+      shopstatus, createtime, updatetime
+      )
+    values (#{shopid,jdbcType=INTEGER}, #{shopname,jdbcType=VARCHAR}, #{typeid,jdbcType=INTEGER}, 
+      #{shopnum,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{oldprice,jdbcType=DOUBLE}, 
+      #{newprice,jdbcType=DOUBLE}, #{shopimage,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{shopstatus,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.bean.Shoppes">
+    insert into shoppes
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="shopid != null">
+        shopid,
+      </if>
+      <if test="shopname != null">
+        shopname,
+      </if>
+      <if test="typeid != null">
+        typeid,
+      </if>
+      <if test="shopnum != null">
+        shopnum,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="oldprice != null">
+        oldprice,
+      </if>
+      <if test="newprice != null">
+        newprice,
+      </if>
+      <if test="shopimage != null">
+        shopimage,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="shopstatus != null">
+        shopstatus,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="shopid != null">
+        #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="shopname != null">
+        #{shopname,jdbcType=VARCHAR},
+      </if>
+      <if test="typeid != null">
+        #{typeid,jdbcType=INTEGER},
+      </if>
+      <if test="shopnum != null">
+        #{shopnum,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="oldprice != null">
+        #{oldprice,jdbcType=DOUBLE},
+      </if>
+      <if test="newprice != null">
+        #{newprice,jdbcType=DOUBLE},
+      </if>
+      <if test="shopimage != null">
+        #{shopimage,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="shopstatus != null">
+        #{shopstatus,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.bean.Shoppes">
+    update shoppes
+    <set>
+      <if test="shopname != null">
+        shopname = #{shopname,jdbcType=VARCHAR},
+      </if>
+      <if test="typeid != null">
+        typeid = #{typeid,jdbcType=INTEGER},
+      </if>
+      <if test="shopnum != null">
+        shopnum = #{shopnum,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="oldprice != null">
+        oldprice = #{oldprice,jdbcType=DOUBLE},
+      </if>
+      <if test="newprice != null">
+        newprice = #{newprice,jdbcType=DOUBLE},
+      </if>
+      <if test="shopimage != null">
+        shopimage = #{shopimage,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="shopstatus != null">
+        shopstatus = #{shopstatus,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where shopid = #{shopid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.bean.Shoppes">
+    update shoppes
+    set shopname = #{shopname,jdbcType=VARCHAR},
+      typeid = #{typeid,jdbcType=INTEGER},
+      shopnum = #{shopnum,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      oldprice = #{oldprice,jdbcType=DOUBLE},
+      newprice = #{newprice,jdbcType=DOUBLE},
+      shopimage = #{shopimage,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      shopstatus = #{shopstatus,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where shopid = #{shopid,jdbcType=INTEGER}
+  </update>
+</mapper>
