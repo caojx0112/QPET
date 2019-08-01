@@ -28,10 +28,15 @@ public class Shoppes {
 
     private Date updatetime;
 
+    private Double shopweight;
+
+    private String recipe;
+
+    private String bodily;
+
     private Shoptypes shoptypes;
 
     private List<Orderdetail> orderdetailList;
-
 
     public Shoptypes getShoptypes() {
         return shoptypes;
@@ -143,5 +148,29 @@ public class Shoppes {
 
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
+    }
+
+    public Double getShopweight() {
+        return shopweight;
+    }
+
+    public void setShopweight(Double shopweight) {
+        this.shopweight = shopweight;
+    }
+
+    public String getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(String recipe) {
+        this.recipe = recipe == null ? null : recipe.trim();
+    }
+
+    public String getBodily() {
+        return bodily;
+    }
+
+    public void setBodily(String bodily) {
+        this.bodily = bodily == null ? null : bodily.trim();
     }
 }

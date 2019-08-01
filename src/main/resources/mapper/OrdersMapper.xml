@@ -18,6 +18,12 @@
     orderid, addressid, userid, couponsid, emoney, orderamount, orderstatus, paystatus, 
     orderdesc, createtime, expirationtime
   </sql>
+
+  <update id="updatepaystatus" parameterType="com.qf.bean.Orders">
+    update orders set paystatus=#{paystatus},orderstatus=#{orderstatus},
+     expirationtime=#{expirationtime} where orderid=#{orderid}
+  </update>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

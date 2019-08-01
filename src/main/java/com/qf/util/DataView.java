@@ -15,7 +15,7 @@ import java.util.List;
  */
 /*json返回工具类
 * */
-public class DataView {
+public class DataView<T> {
     private int code;
     private String msg;
     private List<T> data;

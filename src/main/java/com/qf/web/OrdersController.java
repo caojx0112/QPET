@@ -2,6 +2,7 @@ package com.qf.web;
 
 import com.qf.bean.Orders;
 import com.qf.service.OrdersService;
+import com.qf.util.DataView;
 import com.qf.util.StatusUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,17 +30,7 @@ public class OrdersController {
  */
     @RequestMapping(value = "/api/submitorder",method = RequestMethod.POST)
     @ResponseBody
-    public Map submitorder(int userid,int emoney,int couponsid,int addressid,double orderamount,
-                           String orderdesc,String shops){
-        Orders orders=new Orders();
-        orders.setUserid(userid);
-        orders.setAddressid(addressid);
-        orders.setCouponsid(couponsid);
-        orders.setEmoney(emoney);
-        orders.setOrderamount(orderamount);
-        orders.setOrderstatus(StatusUtils.ORDERS_OFFPAY);
-        orders.setPaystatus(StatusUtils.PAY_OFF);
-        orders.setOrderdesc(orderdesc);
+    public Map submitorder(Orders orders,String shops){
 
         Orders orders1=null;
         orders1 = ordersService.insertorders(orders, shops);
@@ -61,4 +52,64 @@ public class OrdersController {
         map.put("data", map1);
         return map;
     }
+
+    /*
+     * 订单结算---支付
+     * */
+    @RequestMapping(value = "/api/payfororder",method = RequestMethod.GET)
+    @ResponseBody
+    public DataView payfororder(Orders orders){
+        boolean b = ordersService.paystaus(orders);
+        DataView<Orders> dataView=new DataView<>();
+        if (b){
+            dataView.setCode(0);
+            dataView.setMsg("成功");
+            dataView.setData(null);
+            return dataView;
+        }
+        dataView.setCode(1);
+        dataView.setMsg("失败");
+        dataView.setData(null);
+        return dataView;
+    }
+    /*
+    * 取消订单
+    * */
+    @RequestMapping(value = "/api/deleteorder",method = RequestMethod.GET)
+    @ResponseBody
+    public DataView deleteorder(String orderid,Integer userid){
+        boolean b = ordersService.cancel(orderid, userid);
+        DataView<Orders> dataView=new DataView<>();
+        if (b){
+            dataView.setCode(0);
+            dataView.setMsg("成功");
+            dataView.setData(null);
+            return dataView;
+        }
+        dataView.setCode(1);
+        dataView.setMsg("失败");
+        dataView.setData(null);
+        return dataView;
+    }
+
+    /*
+    * 确认收货
+    * */
+    @RequestMapping(value = "/api/shouhuo",method = RequestMethod.GET)
+    @ResponseBody
+    public DataView shouhuo(String orderid,Integer userid){
+        boolean b = ordersService.shouhuo(orderid, userid);
+        DataView<Orders> dataView=new DataView<>();
+        if (b){
+            dataView.setCode(0);
+            dataView.setMsg("成功");
+            dataView.setData(null);
+            return dataView;
+        }
+        dataView.setCode(1);
+        dataView.setMsg("失败");
+        dataView.setData(null);
+        return dataView;
+    }
+
 }

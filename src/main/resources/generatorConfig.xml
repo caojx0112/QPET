@@ -42,22 +42,12 @@
         </javaClientGenerator>
 
 
-        <table tableName="orders" enableCountByExample="false"
+
+        <table tableName="users_coupons" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
-        <table tableName="orderdetail" enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false">
-        </table>
-        <table tableName="shoppes" enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false">
-        </table>
-        <table tableName="shoptypes" enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false">
-        </table>
+
 
 
 

@@ -3,6 +3,9 @@ package com.qf.dao;
 import com.qf.bean.Orders;
 
 public interface OrdersMapper {
+
+    int  updatepaystatus(Orders orders);
+
     int deleteByPrimaryKey(String orderid);
 
     int insert(Orders record);

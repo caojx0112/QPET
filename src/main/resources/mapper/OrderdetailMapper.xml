@@ -3,13 +3,18 @@
 <mapper namespace="com.qf.dao.OrderdetailMapper">
   <resultMap id="BaseResultMap" type="com.qf.bean.Orderdetail">
     <id column="deatilid" jdbcType="INTEGER" property="deatilid" />
-    <result column="oederid" jdbcType="VARCHAR" property="oederid" />
+    <result column="oederid" jdbcType="VARCHAR" property="orderid" />
     <result column="shopid" jdbcType="INTEGER" property="shopid" />
     <result column="shopnum" jdbcType="INTEGER" property="shopnum" />
   </resultMap>
   <sql id="Base_Column_List">
-    deatilid, oederid, shopid, shopnum
+    deatilid, orderid, shopid, shopnum
   </sql>
+
+  <select id="findbyOrderid" resultMap="BaseResultMap">
+    select * from orderdetail where orderid=#{orderid}
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -32,8 +37,8 @@
       <if test="deatilid != null">
         deatilid,
       </if>
-      <if test="oederid != null">
-        oederid,
+      <if test="orderid != null">
+        orderid,
       </if>
       <if test="shopid != null">
         shopid,
@@ -46,8 +51,8 @@
       <if test="deatilid != null">
         #{deatilid,jdbcType=INTEGER},
       </if>
-      <if test="oederid != null">
-        #{oederid,jdbcType=VARCHAR},
+      <if test="orderid != null">
+        #{orderid,jdbcType=VARCHAR},
       </if>
       <if test="shopid != null">
         #{shopid,jdbcType=INTEGER},
@@ -60,8 +65,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.qf.bean.Orderdetail">
     update orderdetail
     <set>
-      <if test="oederid != null">
-        oederid = #{oederid,jdbcType=VARCHAR},
+      <if test="orderid != null">
+        orderid = #{oederid,jdbcType=VARCHAR},
       </if>
       <if test="shopid != null">
         shopid = #{shopid,jdbcType=INTEGER},
@@ -74,7 +79,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qf.bean.Orderdetail">
     update orderdetail
-    set oederid = #{oederid,jdbcType=VARCHAR},
+    set orderid = #{orderid,jdbcType=VARCHAR},
       shopid = #{shopid,jdbcType=INTEGER},
       shopnum = #{shopnum,jdbcType=INTEGER}
     where deatilid = #{deatilid,jdbcType=INTEGER}

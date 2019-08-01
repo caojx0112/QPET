@@ -25,5 +25,7 @@ public class StatusUtils {
     public static int SHOP_SHOUKONG=2;     //商品 --售空
     public static int SHOP_SOLDOUT=3;     //商品 --下架
 
-
+    public static int COUPONS_ONUSE=1;  //优惠卷  --未使用
+    public static int COUPONS_OFFUSE=2;  //优惠卷  --已使用
+    public static int COUPONS_PASTDUE=3;  //优惠卷  --已过期
 }

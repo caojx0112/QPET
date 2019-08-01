@@ -3,7 +3,7 @@ package com.qf.bean;
 public class Orderdetail {
     private Integer deatilid;
 
-    private String oederid;
+    private String orderid;
 
     private Integer shopid;
 
@@ -37,12 +37,12 @@ public class Orderdetail {
         this.deatilid = deatilid;
     }
 
-    public String getOederid() {
-        return oederid;
+    public String getOrderid() {
+        return orderid;
     }
 
-    public void setOederid(String oederid) {
-        this.oederid = oederid == null ? null : oederid.trim();
+    public void setOrderid(String orderid) {
+        this.orderid = orderid == null ? null : orderid.trim();
     }
 
     public Integer getShopid() {

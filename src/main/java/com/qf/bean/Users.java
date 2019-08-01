@@ -17,7 +17,7 @@ public class Users {
 
     private Date birthday;
 
-    private Double emoney;
+    private Integer emoney;
 
     private Integer userstatus;
 
@@ -81,11 +81,11 @@ public class Users {
         this.birthday = birthday;
     }
 
-    public Double getEmoney() {
+    public Integer getEmoney() {
         return emoney;
     }
 
-    public void setEmoney(Double emoney) {
+    public void setEmoney(Integer emoney) {
         this.emoney = emoney;
     }
 

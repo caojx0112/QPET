@@ -9,7 +9,7 @@
     <result column="userimages" jdbcType="VARCHAR" property="userimages" />
     <result column="usersex" jdbcType="VARCHAR" property="usersex" />
     <result column="birthday" jdbcType="DATE" property="birthday" />
-    <result column="emoney" jdbcType="DOUBLE" property="emoney" />
+    <result column="emoney" jdbcType="INTEGER" property="emoney" />
     <result column="userstatus" jdbcType="INTEGER" property="userstatus" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
     <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
@@ -35,7 +35,7 @@
       createtime, updatetime)
     values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR}, #{userimages,jdbcType=VARCHAR}, #{usersex,jdbcType=VARCHAR}, 
-      #{birthday,jdbcType=DATE}, #{emoney,jdbcType=DOUBLE}, #{userstatus,jdbcType=INTEGER}, 
+      #{birthday,jdbcType=DATE}, #{emoney,jdbcType=INTEGER}, #{userstatus,jdbcType=INTEGER}, 
       #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.qf.bean.Users">
@@ -98,7 +98,7 @@
         #{birthday,jdbcType=DATE},
       </if>
       <if test="emoney != null">
-        #{emoney,jdbcType=DOUBLE},
+        #{emoney,jdbcType=INTEGER},
       </if>
       <if test="userstatus != null">
         #{userstatus,jdbcType=INTEGER},
@@ -133,7 +133,7 @@
         birthday = #{birthday,jdbcType=DATE},
       </if>
       <if test="emoney != null">
-        emoney = #{emoney,jdbcType=DOUBLE},
+        emoney = #{emoney,jdbcType=INTEGER},
       </if>
       <if test="userstatus != null">
         userstatus = #{userstatus,jdbcType=INTEGER},
@@ -155,7 +155,7 @@
       userimages = #{userimages,jdbcType=VARCHAR},
       usersex = #{usersex,jdbcType=VARCHAR},
       birthday = #{birthday,jdbcType=DATE},
-      emoney = #{emoney,jdbcType=DOUBLE},
+      emoney = #{emoney,jdbcType=INTEGER},
       userstatus = #{userstatus,jdbcType=INTEGER},
       createtime = #{createtime,jdbcType=TIMESTAMP},
       updatetime = #{updatetime,jdbcType=TIMESTAMP}
