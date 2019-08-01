@@ -16,4 +16,10 @@ public interface UsersService {
     int updateByPrimaryKey(Users record);
 
     int registry(int type,String testbox);
+
+    Users login(String username);
+
+    boolean getCodeByEmail(String email,String code);
+
+    int setPassword(Users record);
 }
