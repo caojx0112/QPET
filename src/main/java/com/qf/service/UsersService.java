@@ -1,8 +1,8 @@
-package com.qf.dao;
+package com.qf.service;
 
 import com.qf.bean.Users;
 
-public interface UsersMapper {
+public interface UsersService {
     int deleteByPrimaryKey(Integer userid);
 
     int insert(Users record);
@@ -15,7 +15,11 @@ public interface UsersMapper {
 
     int updateByPrimaryKey(Users record);
 
-    Users selectByUsername(String username);
+    int registry(int type,String testbox);
+
+    Users login(String username);
+
+    boolean getCodeByEmail(String email,String code);
 
     int setPassword(Users record);
 }
