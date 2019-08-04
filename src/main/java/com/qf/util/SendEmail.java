@@ -24,8 +24,8 @@ public class SendEmail {
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(from));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            message.setSubject("【Q萌宠物】注册邮箱验证");
-            message.setText("亲爱的Q萌宠物用户：您好！本次注册的验证码为"+code);
+            message.setSubject("【爱Q宠】邮箱验证");
+            message.setText("亲爱的爱Q宠用户：您好！本次的验证码为"+code);
             Transport.send(message);
             return true;
         } catch (MessagingException mex) {

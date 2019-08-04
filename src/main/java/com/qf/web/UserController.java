@@ -34,8 +34,6 @@ public class UserController {
     public Map login(String username, String password, HttpSession session){
         Map map=new HashMap();
         Users users = usersService.login(username);
-        System.out.println(users.getPassword());
-        System.out.println(new MD5().getMD5ofStr(password));
         if (users==null){
             map.put("code",1);//0成功/1失败
             map.put("msg","用户名不存在");
@@ -69,12 +67,14 @@ public class UserController {
         boolean flag=false;
         if (type==1){
             //短信发送....
+            flag = usersService.getCodeBySms(textbox, code);
         }else{
             flag = usersService.getCodeByEmail(textbox, code);
         }
         if (flag){//成功
            session.setAttribute("code",code);
            session.setAttribute("textbox",textbox);
+           session.setAttribute("codeStatus",false);
            map.put("code",0);
            map.put("msg","成功");
         }else {//失败
@@ -164,12 +164,14 @@ public class UserController {
         }else {
             if (type==1){
                 //短信发送....
+                flag=usersService.getCodeBySms(textbox,code);
             }else{
                 flag = usersService.getCodeByEmail(textbox, code);
             }
             if (flag){//成功
                 session.setAttribute("regcode",code);
                 session.setAttribute("regtextbox",textbox);
+                session.setAttribute("regcodeStatus",false);
                 map.put("code",0);
                 map.put("msg","成功");
             }else {//失败
