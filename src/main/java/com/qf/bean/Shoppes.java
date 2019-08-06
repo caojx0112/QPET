@@ -1,18 +1,19 @@
 package com.qf.bean;
 
 import java.util.Date;
-import java.util.List;
 
 public class Shoppes {
     private Integer shopid;
 
     private String shopname;
 
+    private Integer type;
+
     private Integer typeid;
 
     private Integer shopnum;
 
-    private Integer type;
+    private Integer shopsales;
 
     private Double oldprice;
 
@@ -24,34 +25,38 @@ public class Shoppes {
 
     private Integer shopstatus;
 
-    private Date createtime;
+    private Integer emoney;
 
-    private Date updatetime;
+    private String petbodily;
 
-    private Double shopweight;
+    private String woollength;
+
+    private String pettype;
+
+    private String petcolor;
+
+    private Integer petblood;
+
+    private Integer petclean;
+
+    private Integer petvideo;
 
     private String recipe;
 
-    private String bodily;
+    private Integer suitableage;
 
-    private Shoptypes shoptypes;
+    private Date createtime;
 
-    private List<Orderdetail> orderdetailList;
+    private Date putawaytime;
 
-    public Shoptypes getShoptypes() {
-        return shoptypes;
+    private String shopweight;  //商品规格
+
+    public String getShopweight() {
+        return shopweight;
     }
 
-    public void setShoptypes(Shoptypes shoptypes) {
-        this.shoptypes = shoptypes;
-    }
-
-    public List<Orderdetail> getOrderdetailList() {
-        return orderdetailList;
-    }
-
-    public void setOrderdetailList(List<Orderdetail> orderdetailList) {
-        this.orderdetailList = orderdetailList;
+    public void setShopweight(String shopweight) {
+        this.shopweight = shopweight;
     }
 
     public Integer getShopid() {
@@ -70,6 +75,14 @@ public class Shoppes {
         this.shopname = shopname == null ? null : shopname.trim();
     }
 
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
     public Integer getTypeid() {
         return typeid;
     }
@@ -86,12 +99,12 @@ public class Shoppes {
         this.shopnum = shopnum;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getShopsales() {
+        return shopsales;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setShopsales(Integer shopsales) {
+        this.shopsales = shopsales;
     }
 
     public Double getOldprice() {
@@ -134,28 +147,68 @@ public class Shoppes {
         this.shopstatus = shopstatus;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Integer getEmoney() {
+        return emoney;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setEmoney(Integer emoney) {
+        this.emoney = emoney;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public String getPetbodily() {
+        return petbodily;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setPetbodily(String petbodily) {
+        this.petbodily = petbodily == null ? null : petbodily.trim();
     }
 
-    public Double getShopweight() {
-        return shopweight;
+    public String getWoollength() {
+        return woollength;
     }
 
-    public void setShopweight(Double shopweight) {
-        this.shopweight = shopweight;
+    public void setWoollength(String woollength) {
+        this.woollength = woollength == null ? null : woollength.trim();
+    }
+
+    public String getPettype() {
+        return pettype;
+    }
+
+    public void setPettype(String pettype) {
+        this.pettype = pettype == null ? null : pettype.trim();
+    }
+
+    public String getPetcolor() {
+        return petcolor;
+    }
+
+    public void setPetcolor(String petcolor) {
+        this.petcolor = petcolor == null ? null : petcolor.trim();
+    }
+
+    public Integer getPetblood() {
+        return petblood;
+    }
+
+    public void setPetblood(Integer petblood) {
+        this.petblood = petblood;
+    }
+
+    public Integer getPetclean() {
+        return petclean;
+    }
+
+    public void setPetclean(Integer petclean) {
+        this.petclean = petclean;
+    }
+
+    public Integer getPetvideo() {
+        return petvideo;
+    }
+
+    public void setPetvideo(Integer petvideo) {
+        this.petvideo = petvideo;
     }
 
     public String getRecipe() {
@@ -166,11 +219,27 @@ public class Shoppes {
         this.recipe = recipe == null ? null : recipe.trim();
     }
 
-    public String getBodily() {
-        return bodily;
+    public Integer getSuitableage() {
+        return suitableage;
     }
 
-    public void setBodily(String bodily) {
-        this.bodily = bodily == null ? null : bodily.trim();
+    public void setSuitableage(Integer suitableage) {
+        this.suitableage = suitableage;
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public Date getPutawaytime() {
+        return putawaytime;
+    }
+
+    public void setPutawaytime(Date putawaytime) {
+        this.putawaytime = putawaytime;
     }
 }

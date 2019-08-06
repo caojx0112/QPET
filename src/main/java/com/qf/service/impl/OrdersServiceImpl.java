@@ -14,10 +14,7 @@ import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * ** 程序猿
@@ -38,6 +35,10 @@ public class OrdersServiceImpl implements OrdersService {
     private UsersMapper usersMapper;
     @Resource
     private UsersCouponsMapper usersCouponsMapper;
+    @Resource
+    private EvaluatesMapper evaluatesMapper;
+    @Resource
+    private SpecificationMapper specificationMapper;
 
     @Override
     @Transactional
@@ -112,6 +113,16 @@ public class OrdersServiceImpl implements OrdersService {
             orders.setOrderstatus(StatusUtils.ORDERS_OFFSHIPMENTS);
             orders.setExpirationtime(null);  //取消过期时间
             ordersMapper.updatepaystatus(orders);
+            //修改用户E币
+            int count=0;
+            Users users = usersMapper.selectByPrimaryKey(orders.getUserid());
+            List<Orderdetail> orderdetails = orderdetailMapper.findbyOrderid(orders.getOrderid());
+            for (Orderdetail orderdetail : orderdetails) {
+                Shoppes shoppes = shoppesMapper.selectByPrimaryKey(orderdetail.getShopid());
+                count=count+shoppes.getEmoney();
+            }
+            users.setEmoney(users.getEmoney()+count);
+            usersMapper.updateByPrimaryKeySelective(users);
             return true;
         }
         return false;
@@ -125,11 +136,12 @@ public class OrdersServiceImpl implements OrdersService {
         //修改订单状态为已取消  --5
         orders.setOrderstatus(StatusUtils.ORDERS_CANCEL);
         ordersMapper.updateByPrimaryKeySelective(orders);
-        //修改E币
+        //  --修改E币
+        Users users = usersMapper.selectByPrimaryKey(orders.getUserid());
+        int count=0;
         if (orders.getEmoney()>0){
-            Users users = usersMapper.selectByPrimaryKey(orders.getUserid());
-            users.setEmoney(users.getEmoney()+orders.getEmoney());
-            usersMapper.updateByPrimaryKeySelective(users);
+            //付款使用的E币  +回去
+            count=users.getEmoney() + orders.getEmoney();
         }
         //查询购买的商品
         List<Orderdetail> orderdetails = orderdetailMapper.findbyOrderid(orderid);
@@ -142,7 +154,13 @@ public class OrdersServiceImpl implements OrdersService {
                 shoppes.setShopstatus(StatusUtils.SHOP_SELL);
             }
             shoppesMapper.updateByPrimaryKeySelective(shoppes);
+            //E币
+            if (orders.getPaystatus()==StatusUtils.PAY_YES) {  //已付款  减去返利的E币
+                count=count-shoppes.getEmoney();
+            }
         }
+        users.setEmoney(count);
+        usersMapper.updateByPrimaryKeySelective(users);
         falg=true;
         return falg;
     }
@@ -156,6 +174,71 @@ public class OrdersServiceImpl implements OrdersService {
         ordersMapper.updateByPrimaryKeySelective(orders);
         falg=true;
         return falg;
+    }
+
+    @Override
+    @Transactional
+    public boolean evaluate(Evaluates evaluates) {
+        //图片处理
+        String evaluateimage = evaluates.getEvaluateimage();
+        if (evaluateimage!=null){
+            evaluateimage.split(",");
+        }
+
+        return false;
+    }
+
+    @Override
+    public List<OrdersList> findall(int userid) {
+        List<Orders> orders = ordersMapper.findbyuserid(userid);
+        List<OrdersList> list=new ArrayList<>();
+        for (Orders order : orders) {
+            List<Shoppes> shopList=new ArrayList<>(); //存放每个订单商品信息
+//            使用订单返回类封装返回数据
+            OrdersList ordersList=new OrdersList();
+            ordersList.setOrderid(order.getOrderid());
+            ordersList.setOrderamount(order.getOrderamount());
+            ordersList.setOrderstatus(order.getOrderstatus());
+            //订单详情对应的商品id
+            List<Orderdetail> shopids = orderdetailMapper.findshopidbyorderid(order.getOrderid());
+            ordersList.setOrdercount(shopids.size()); //该条订单商品数量
+            //    根据id查询商品信息
+            for (Orderdetail orderdetail : shopids) {
+                Shoppes shoppes = shoppesMapper.selectByPrimaryKey(orderdetail.getShopid());
+                Specification specification = specificationMapper.selectByPrimaryKey(orderdetail.getSpecification());
+                if (specification!=null) {
+                    shoppes.setShopweight(specification.getShopwegiht());
+                    shoppes.setNewprice(specification.getShopmoney());
+                }
+                shoppes.setShopnum(orderdetail.getShopnum());  //购买商品数量
+                shopList.add(shoppes);
+            }
+            ordersList.setShoppes(shopList);  //添加商品信息列表
+            list.add(ordersList);  //订单添加到集合中
+        }
+        return list;
+    }
+
+    @Override
+    public Orders findbyorderid(String orderid) {
+        //查询该订单信息
+        Orders orders = ordersMapper.findorderdetail(orderid);
+        List<Shoppes> shopList=new ArrayList<>(); //存放每个订单商品信息
+        //订单详情对应的商品id
+        List<Orderdetail> shopids = orderdetailMapper.findshopidbyorderid(orders.getOrderid());
+        //    根据id查询商品信息
+        for (Orderdetail orderdetail : shopids) {
+            Shoppes shoppes = shoppesMapper.selectByPrimaryKey(orderdetail.getShopid());
+            Specification specification = specificationMapper.selectByPrimaryKey(orderdetail.getSpecification());
+            if (specification!=null) {
+                shoppes.setShopweight(specification.getShopwegiht());
+                shoppes.setNewprice(specification.getShopmoney());
+            }
+            shoppes.setShopnum(orderdetail.getShopnum());  //购买商品数量
+            shopList.add(shoppes);
+        }
+        orders.setShoppes(shopList);  //添加商品信息列表
+        return orders;
     }
 }
 

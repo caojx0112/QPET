@@ -4,23 +4,32 @@
   <resultMap id="BaseResultMap" type="com.qf.bean.Shoppes">
     <id column="shopid" jdbcType="INTEGER" property="shopid" />
     <result column="shopname" jdbcType="VARCHAR" property="shopname" />
+    <result column="type" jdbcType="INTEGER" property="type" />
     <result column="typeid" jdbcType="INTEGER" property="typeid" />
     <result column="shopnum" jdbcType="INTEGER" property="shopnum" />
-    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="shopsales" jdbcType="INTEGER" property="shopsales" />
     <result column="oldprice" jdbcType="DOUBLE" property="oldprice" />
     <result column="newprice" jdbcType="DOUBLE" property="newprice" />
     <result column="shopimage" jdbcType="VARCHAR" property="shopimage" />
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="shopstatus" jdbcType="INTEGER" property="shopstatus" />
-    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
-    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
-    <result column="shopweight" jdbcType="DOUBLE" property="shopweight" />
+    <result column="emoney" jdbcType="INTEGER" property="emoney" />
+    <result column="petbodily" jdbcType="VARCHAR" property="petbodily" />
+    <result column="woollength" jdbcType="VARCHAR" property="woollength" />
+    <result column="pettype" jdbcType="VARCHAR" property="pettype" />
+    <result column="petcolor" jdbcType="VARCHAR" property="petcolor" />
+    <result column="petblood" jdbcType="INTEGER" property="petblood" />
+    <result column="petclean" jdbcType="INTEGER" property="petclean" />
+    <result column="petvideo" jdbcType="INTEGER" property="petvideo" />
     <result column="recipe" jdbcType="VARCHAR" property="recipe" />
-    <result column="bodily" jdbcType="VARCHAR" property="bodily" />
+    <result column="suitableage" jdbcType="INTEGER" property="suitableage" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="putawaytime" jdbcType="TIMESTAMP" property="putawaytime" />
   </resultMap>
   <sql id="Base_Column_List">
-    shopid, shopname, typeid, shopnum, type, oldprice, newprice, shopimage, content, 
-    shopstatus, createtime, updatetime, shopweight, recipe, bodily
+    shopid, shopname, type, typeid, shopnum, shopsales, oldprice, newprice, shopimage, 
+    content, shopstatus, emoney, petbodily, woollength, pettype, petcolor, petblood, 
+    petclean, petvideo, recipe, suitableage, createtime, putawaytime
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -33,18 +42,22 @@
     where shopid = #{shopid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.qf.bean.Shoppes">
-    insert into shoppes (shopid, shopname, typeid, 
-      shopnum, type, oldprice, 
-      newprice, shopimage, content, 
-      shopstatus, createtime, updatetime, 
-      shopweight, recipe, bodily
-      )
-    values (#{shopid,jdbcType=INTEGER}, #{shopname,jdbcType=VARCHAR}, #{typeid,jdbcType=INTEGER}, 
-      #{shopnum,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{oldprice,jdbcType=DOUBLE}, 
-      #{newprice,jdbcType=DOUBLE}, #{shopimage,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
-      #{shopstatus,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, 
-      #{shopweight,jdbcType=DOUBLE}, #{recipe,jdbcType=VARCHAR}, #{bodily,jdbcType=VARCHAR}
-      )
+    insert into shoppes (shopid, shopname, type, 
+      typeid, shopnum, shopsales, 
+      oldprice, newprice, shopimage, 
+      content, shopstatus, emoney, 
+      petbodily, woollength, pettype, 
+      petcolor, petblood, petclean, 
+      petvideo, recipe, suitableage, 
+      createtime, putawaytime)
+    values (#{shopid,jdbcType=INTEGER}, #{shopname,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, 
+      #{typeid,jdbcType=INTEGER}, #{shopnum,jdbcType=INTEGER}, #{shopsales,jdbcType=INTEGER}, 
+      #{oldprice,jdbcType=DOUBLE}, #{newprice,jdbcType=DOUBLE}, #{shopimage,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{shopstatus,jdbcType=INTEGER}, #{emoney,jdbcType=INTEGER}, 
+      #{petbodily,jdbcType=VARCHAR}, #{woollength,jdbcType=VARCHAR}, #{pettype,jdbcType=VARCHAR}, 
+      #{petcolor,jdbcType=VARCHAR}, #{petblood,jdbcType=INTEGER}, #{petclean,jdbcType=INTEGER}, 
+      #{petvideo,jdbcType=INTEGER}, #{recipe,jdbcType=VARCHAR}, #{suitableage,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{putawaytime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.qf.bean.Shoppes">
     insert into shoppes
@@ -55,14 +68,17 @@
       <if test="shopname != null">
         shopname,
       </if>
+      <if test="type != null">
+        type,
+      </if>
       <if test="typeid != null">
         typeid,
       </if>
       <if test="shopnum != null">
         shopnum,
       </if>
-      <if test="type != null">
-        type,
+      <if test="shopsales != null">
+        shopsales,
       </if>
       <if test="oldprice != null">
         oldprice,
@@ -79,20 +95,41 @@
       <if test="shopstatus != null">
         shopstatus,
       </if>
-      <if test="createtime != null">
-        createtime,
+      <if test="emoney != null">
+        emoney,
       </if>
-      <if test="updatetime != null">
-        updatetime,
+      <if test="petbodily != null">
+        petbodily,
       </if>
-      <if test="shopweight != null">
-        shopweight,
+      <if test="woollength != null">
+        woollength,
+      </if>
+      <if test="pettype != null">
+        pettype,
+      </if>
+      <if test="petcolor != null">
+        petcolor,
+      </if>
+      <if test="petblood != null">
+        petblood,
+      </if>
+      <if test="petclean != null">
+        petclean,
+      </if>
+      <if test="petvideo != null">
+        petvideo,
       </if>
       <if test="recipe != null">
         recipe,
       </if>
-      <if test="bodily != null">
-        bodily,
+      <if test="suitableage != null">
+        suitableage,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="putawaytime != null">
+        putawaytime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -102,14 +139,17 @@
       <if test="shopname != null">
         #{shopname,jdbcType=VARCHAR},
       </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
       <if test="typeid != null">
         #{typeid,jdbcType=INTEGER},
       </if>
       <if test="shopnum != null">
         #{shopnum,jdbcType=INTEGER},
       </if>
-      <if test="type != null">
-        #{type,jdbcType=INTEGER},
+      <if test="shopsales != null">
+        #{shopsales,jdbcType=INTEGER},
       </if>
       <if test="oldprice != null">
         #{oldprice,jdbcType=DOUBLE},
@@ -126,20 +166,41 @@
       <if test="shopstatus != null">
         #{shopstatus,jdbcType=INTEGER},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="emoney != null">
+        #{emoney,jdbcType=INTEGER},
       </if>
-      <if test="updatetime != null">
-        #{updatetime,jdbcType=TIMESTAMP},
+      <if test="petbodily != null">
+        #{petbodily,jdbcType=VARCHAR},
       </if>
-      <if test="shopweight != null">
-        #{shopweight,jdbcType=DOUBLE},
+      <if test="woollength != null">
+        #{woollength,jdbcType=VARCHAR},
+      </if>
+      <if test="pettype != null">
+        #{pettype,jdbcType=VARCHAR},
+      </if>
+      <if test="petcolor != null">
+        #{petcolor,jdbcType=VARCHAR},
+      </if>
+      <if test="petblood != null">
+        #{petblood,jdbcType=INTEGER},
+      </if>
+      <if test="petclean != null">
+        #{petclean,jdbcType=INTEGER},
+      </if>
+      <if test="petvideo != null">
+        #{petvideo,jdbcType=INTEGER},
       </if>
       <if test="recipe != null">
         #{recipe,jdbcType=VARCHAR},
       </if>
-      <if test="bodily != null">
-        #{bodily,jdbcType=VARCHAR},
+      <if test="suitableage != null">
+        #{suitableage,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="putawaytime != null">
+        #{putawaytime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -149,14 +210,17 @@
       <if test="shopname != null">
         shopname = #{shopname,jdbcType=VARCHAR},
       </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
       <if test="typeid != null">
         typeid = #{typeid,jdbcType=INTEGER},
       </if>
       <if test="shopnum != null">
         shopnum = #{shopnum,jdbcType=INTEGER},
       </if>
-      <if test="type != null">
-        type = #{type,jdbcType=INTEGER},
+      <if test="shopsales != null">
+        shopsales = #{shopsales,jdbcType=INTEGER},
       </if>
       <if test="oldprice != null">
         oldprice = #{oldprice,jdbcType=DOUBLE},
@@ -173,20 +237,41 @@
       <if test="shopstatus != null">
         shopstatus = #{shopstatus,jdbcType=INTEGER},
       </if>
-      <if test="createtime != null">
-        createtime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="emoney != null">
+        emoney = #{emoney,jdbcType=INTEGER},
       </if>
-      <if test="updatetime != null">
-        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      <if test="petbodily != null">
+        petbodily = #{petbodily,jdbcType=VARCHAR},
       </if>
-      <if test="shopweight != null">
-        shopweight = #{shopweight,jdbcType=DOUBLE},
+      <if test="woollength != null">
+        woollength = #{woollength,jdbcType=VARCHAR},
+      </if>
+      <if test="pettype != null">
+        pettype = #{pettype,jdbcType=VARCHAR},
+      </if>
+      <if test="petcolor != null">
+        petcolor = #{petcolor,jdbcType=VARCHAR},
+      </if>
+      <if test="petblood != null">
+        petblood = #{petblood,jdbcType=INTEGER},
+      </if>
+      <if test="petclean != null">
+        petclean = #{petclean,jdbcType=INTEGER},
+      </if>
+      <if test="petvideo != null">
+        petvideo = #{petvideo,jdbcType=INTEGER},
       </if>
       <if test="recipe != null">
         recipe = #{recipe,jdbcType=VARCHAR},
       </if>
-      <if test="bodily != null">
-        bodily = #{bodily,jdbcType=VARCHAR},
+      <if test="suitableage != null">
+        suitableage = #{suitableage,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="putawaytime != null">
+        putawaytime = #{putawaytime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where shopid = #{shopid,jdbcType=INTEGER}
@@ -194,19 +279,27 @@
   <update id="updateByPrimaryKey" parameterType="com.qf.bean.Shoppes">
     update shoppes
     set shopname = #{shopname,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
       typeid = #{typeid,jdbcType=INTEGER},
       shopnum = #{shopnum,jdbcType=INTEGER},
-      type = #{type,jdbcType=INTEGER},
+      shopsales = #{shopsales,jdbcType=INTEGER},
       oldprice = #{oldprice,jdbcType=DOUBLE},
       newprice = #{newprice,jdbcType=DOUBLE},
       shopimage = #{shopimage,jdbcType=VARCHAR},
       content = #{content,jdbcType=VARCHAR},
       shopstatus = #{shopstatus,jdbcType=INTEGER},
-      createtime = #{createtime,jdbcType=TIMESTAMP},
-      updatetime = #{updatetime,jdbcType=TIMESTAMP},
-      shopweight = #{shopweight,jdbcType=DOUBLE},
+      emoney = #{emoney,jdbcType=INTEGER},
+      petbodily = #{petbodily,jdbcType=VARCHAR},
+      woollength = #{woollength,jdbcType=VARCHAR},
+      pettype = #{pettype,jdbcType=VARCHAR},
+      petcolor = #{petcolor,jdbcType=VARCHAR},
+      petblood = #{petblood,jdbcType=INTEGER},
+      petclean = #{petclean,jdbcType=INTEGER},
+      petvideo = #{petvideo,jdbcType=INTEGER},
       recipe = #{recipe,jdbcType=VARCHAR},
-      bodily = #{bodily,jdbcType=VARCHAR}
+      suitableage = #{suitableage,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      putawaytime = #{putawaytime,jdbcType=TIMESTAMP}
     where shopid = #{shopid,jdbcType=INTEGER}
   </update>
 </mapper>
