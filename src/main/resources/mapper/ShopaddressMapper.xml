@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.ShopaddressMapper">
+  <resultMap id="BaseResultMap" type="com.qf.bean.Shopaddress">
+    <id column="addressid" jdbcType="INTEGER" property="addressid" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="buyername" jdbcType="VARCHAR" property="buyername" />
+    <result column="buyerphone" jdbcType="VARCHAR" property="buyerphone" />
+    <result column="buyeraddress" jdbcType="VARCHAR" property="buyeraddress" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    addressid, userid, buyername, buyerphone, buyeraddress
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shopaddress
+    where addressid = #{addressid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from shopaddress
+    where addressid = #{addressid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.bean.Shopaddress">
+    insert into shopaddress (addressid, userid, buyername, 
+      buyerphone, buyeraddress)
+    values (#{addressid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{buyername,jdbcType=VARCHAR}, 
+      #{buyerphone,jdbcType=VARCHAR}, #{buyeraddress,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.bean.Shopaddress">
+    insert into shopaddress
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="addressid != null">
+        addressid,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="buyername != null">
+        buyername,
+      </if>
+      <if test="buyerphone != null">
+        buyerphone,
+      </if>
+      <if test="buyeraddress != null">
+        buyeraddress,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="addressid != null">
+        #{addressid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="buyername != null">
+        #{buyername,jdbcType=VARCHAR},
+      </if>
+      <if test="buyerphone != null">
+        #{buyerphone,jdbcType=VARCHAR},
+      </if>
+      <if test="buyeraddress != null">
+        #{buyeraddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.bean.Shopaddress">
+    update shopaddress
+    <set>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="buyername != null">
+        buyername = #{buyername,jdbcType=VARCHAR},
+      </if>
+      <if test="buyerphone != null">
+        buyerphone = #{buyerphone,jdbcType=VARCHAR},
+      </if>
+      <if test="buyeraddress != null">
+        buyeraddress = #{buyeraddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where addressid = #{addressid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.bean.Shopaddress">
+    update shopaddress
+    set userid = #{userid,jdbcType=INTEGER},
+      buyername = #{buyername,jdbcType=VARCHAR},
+      buyerphone = #{buyerphone,jdbcType=VARCHAR},
+      buyeraddress = #{buyeraddress,jdbcType=VARCHAR}
+    where addressid = #{addressid,jdbcType=INTEGER}
+  </update>
+</mapper>
