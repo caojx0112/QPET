@@ -11,12 +11,13 @@
     <result column="birthday" jdbcType="DATE" property="birthday" />
     <result column="emoney" jdbcType="INTEGER" property="emoney" />
     <result column="userstatus" jdbcType="INTEGER" property="userstatus" />
+    <result column="addressid" jdbcType="INTEGER" property="addressid" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
     <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
   </resultMap>
   <sql id="Base_Column_List">
-    userid, username, nickname, password, userimages, usersex, birthday, emoney, userstatus, 
-    createtime, updatetime
+    userid, username, nickname, password, userimages, usersex, birthday, emoney, userstatus,
+    addressid,createtime, updatetime
   </sql>
   <select id="selectByUsername" resultMap="BaseResultMap">
     select
@@ -42,12 +43,12 @@
   <insert id="insert" parameterType="com.qf.bean.Users">
     insert into users (userid, username, nickname, 
       password, userimages, usersex, 
-      birthday, emoney, userstatus, 
+      birthday, emoney, userstatus,addressid,
       createtime, updatetime)
     values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR}, #{userimages,jdbcType=VARCHAR}, #{usersex,jdbcType=VARCHAR}, 
       #{birthday,jdbcType=DATE}, #{emoney,jdbcType=INTEGER}, #{userstatus,jdbcType=INTEGER}, 
-      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
+      #{addressid,jdbcType=INTEGER},#{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.qf.bean.Users">
     insert into users
@@ -78,6 +79,9 @@
       </if>
       <if test="userstatus != null">
         userstatus,
+      </if>
+      <if test="addressid != null">
+        addressid,
       </if>
       <if test="createtime != null">
         createtime,
@@ -114,6 +118,9 @@
       <if test="userstatus != null">
         #{userstatus,jdbcType=INTEGER},
       </if>
+      <if test="addressid != null">
+        #{addressid,jdbcType=INTEGER},
+      </if>
       <if test="createtime != null">
         #{createtime,jdbcType=TIMESTAMP},
       </if>
@@ -149,6 +156,9 @@
       <if test="userstatus != null">
         userstatus = #{userstatus,jdbcType=INTEGER},
       </if>
+      <if test="addressid != null">
+        addressid = #{addressid,jdbcType=INTEGER},
+      </if>
       <if test="createtime != null">
         createtime = #{createtime,jdbcType=TIMESTAMP},
       </if>
@@ -168,6 +178,7 @@
       birthday = #{birthday,jdbcType=DATE},
       emoney = #{emoney,jdbcType=INTEGER},
       userstatus = #{userstatus,jdbcType=INTEGER},
+      addressid = #{addressid,jdbcType=INTEGER},
       createtime = #{createtime,jdbcType=TIMESTAMP},
       updatetime = #{updatetime,jdbcType=TIMESTAMP}
     where userid = #{userid,jdbcType=INTEGER}

@@ -43,11 +43,14 @@
 
 
 
-        <table tableName="users_coupons" enableCountByExample="false"
+        <table tableName="shoppes" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
-
+        <table tableName="specification" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
 
 
 

@@ -1,6 +1,8 @@
 package com.qf.web;
 
+import com.qf.bean.Evaluates;
 import com.qf.bean.Orders;
+import com.qf.bean.OrdersList;
 import com.qf.service.OrdersService;
 import com.qf.util.DataView;
 import com.qf.util.StatusUtils;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -110,6 +113,56 @@ public class OrdersController {
         dataView.setMsg("失败");
         dataView.setData(null);
         return dataView;
+    }
+    /*
+    * 订单--好评
+    * */
+    @RequestMapping(value = "api/evaluate",method = RequestMethod.POST)
+    @ResponseBody
+    public DataView evaluate(Evaluates evaluates){
+
+        DataView<Evaluates> dataView=new DataView<>();
+        return dataView;
+    }
+
+    /*
+    * 查看订单列表
+    * */
+    @RequestMapping(value = "/api/showorder",method = RequestMethod.GET)
+    @ResponseBody
+    public DataView showorder(int userid){
+        List<OrdersList> ordersList = ordersService.findall(userid);
+        DataView<OrdersList> dataView=new DataView<>();
+        if (ordersList.size()>0) {
+            dataView.setCode(0);
+            dataView.setMsg("成功");
+            dataView.setData(ordersList);
+            return dataView;
+        }
+        dataView.setCode(1);
+        dataView.setMsg("失败");
+        dataView.setData(ordersList);
+        return dataView;
+    }
+
+    /*
+     * 查看订单详情
+     * */
+    @RequestMapping(value = "/api/showorderdetail",method = RequestMethod.GET)
+    @ResponseBody
+    public Map showorderdetail(String orderid){
+        Orders orders = ordersService.findbyorderid(orderid);
+        Map map=new HashMap();
+        if(orders!=null) {
+            map.put("code", 0);
+            map.put("msg", "成功");
+            map.put("data", orders);
+            return map;
+        }
+        map.put("code", 1);
+        map.put("msg", "失败");
+        map.put("data", orders);
+        return map;
     }
 
 }

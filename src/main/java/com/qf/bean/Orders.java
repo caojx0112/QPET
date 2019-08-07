@@ -30,6 +30,36 @@ public class Orders {
 
     private Users users;
 
+    private Shopaddress shopaddress;
+
+    private List<Shoppes> shoppes;  //商品信息---用作数据封装
+
+    private Coupons coupons;  //优惠卷
+
+    public Coupons getCoupons() {
+        return coupons;
+    }
+
+    public void setCoupons(Coupons coupons) {
+        this.coupons = coupons;
+    }
+
+    public List<Shoppes> getShoppes() {
+        return shoppes;
+    }
+
+    public void setShoppes(List<Shoppes> shoppes) {
+        this.shoppes = shoppes;
+    }
+
+    public Shopaddress getShopaddress() {
+        return shopaddress;
+    }
+
+    public void setShopaddress(Shopaddress shopaddress) {
+        this.shopaddress = shopaddress;
+    }
+
     public List<Orderdetail> getOrderdetailList() {
         return orderdetailList;
     }

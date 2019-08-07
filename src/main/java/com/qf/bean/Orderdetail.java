@@ -9,6 +9,8 @@ public class Orderdetail {
 
     private Integer shopnum;
 
+    private Integer specification;
+
     private Shoppes shoppes;
 
     private Orders orders;
@@ -59,5 +61,13 @@ public class Orderdetail {
 
     public void setShopnum(Integer shopnum) {
         this.shopnum = shopnum;
+    }
+
+    public Integer getSpecification() {
+        return specification;
+    }
+
+    public void setSpecification(Integer specification) {
+        this.specification = specification;
     }
 }

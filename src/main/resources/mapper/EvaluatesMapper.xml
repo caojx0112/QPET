@@ -7,9 +7,10 @@
     <result column="userid" jdbcType="INTEGER" property="userid" />
     <result column="evaluateimage" jdbcType="VARCHAR" property="evaluateimage" />
     <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
   </resultMap>
   <sql id="Base_Column_List">
-    evaluateid, shopid, userid, evaluateimage, content
+    evaluateid, shopid, userid, evaluateimage, content, createtime
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -23,9 +24,11 @@
   </delete>
   <insert id="insert" parameterType="com.qf.bean.Evaluates">
     insert into evaluates (evaluateid, shopid, userid, 
-      evaluateimage, content)
+      evaluateimage, content, createtime
+      )
     values (#{evaluateid,jdbcType=INTEGER}, #{shopid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, 
-      #{evaluateimage,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR})
+      #{evaluateimage,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.qf.bean.Evaluates">
     insert into evaluates
@@ -45,6 +48,9 @@
       <if test="content != null">
         content,
       </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="evaluateid != null">
@@ -61,6 +67,9 @@
       </if>
       <if test="content != null">
         #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -79,6 +88,9 @@
       <if test="content != null">
         content = #{content,jdbcType=VARCHAR},
       </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where evaluateid = #{evaluateid,jdbcType=INTEGER}
   </update>
@@ -87,7 +99,8 @@
     set shopid = #{shopid,jdbcType=INTEGER},
       userid = #{userid,jdbcType=INTEGER},
       evaluateimage = #{evaluateimage,jdbcType=VARCHAR},
-      content = #{content,jdbcType=VARCHAR}
+      content = #{content,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP}
     where evaluateid = #{evaluateid,jdbcType=INTEGER}
   </update>
 </mapper>
