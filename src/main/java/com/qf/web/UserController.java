@@ -246,4 +246,11 @@ public class UserController {
         }
         return map;
     }
+    @RequestMapping(value = "/api/islogin",method = RequestMethod.GET)
+    @ResponseBody
+    public boolean islogin(HttpSession session){
+        Object users = session.getAttribute("users");
+        if (users!=null) return true;
+        return false;
+    }
 }
