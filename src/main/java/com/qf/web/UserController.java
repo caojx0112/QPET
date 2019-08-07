@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -133,7 +135,17 @@ public class UserController {
                 Users users=new Users();
                 users.setUsername(textbox);
                 users.setPassword(new MD5().getMD5ofStr(password));
-                System.out.println(users.getUsername());
+                users.setNickname("小Q君");
+                users.setUserimages("image/dfhead.jpg");
+                Date date=new Date();
+                date.setYear(100);
+                date.setMonth(0);
+                date.setDate(1);
+                users.setBirthday(date);
+                users.setEmoney(0);
+                users.setUserstatus(1);
+                users.setCreatetime(new Date());
+                users.setUsersex("保密");
                 int i = usersService.insertSelective(users);
                 if (i>0){
                     map.put("code",0);
@@ -248,9 +260,14 @@ public class UserController {
     }
     @RequestMapping(value = "/api/islogin",method = RequestMethod.GET)
     @ResponseBody
-    public boolean islogin(HttpSession session){
+    public Map islogin(HttpSession session){
+        Map map=new HashMap();
         Object users = session.getAttribute("users");
-        if (users!=null) return true;
-        return false;
+        if (users!=null) {
+            map.put("status","true");
+        }else {
+            map.put("status","false");
+        }
+        return map;
     }
 }
