@@ -14,6 +14,12 @@ public class SendEmail {
         Properties properties = System.getProperties();
         properties.setProperty("mail.smtp.host", host);
         properties.put("mail.smtp.auth", "true");
+      //服务器禁用25端口，所以服务器上改为465端口
+         properties.put("mail.smtp.socketFactory.port", "465");
+         properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+         properties.setProperty("mail.smtp.socketFactory.fallback", "false");
+         properties.setProperty("mail.smtp.socketFactory.port", "465");
+
 
         Session session = Session.getDefaultInstance(properties,new Authenticator(){
                     public PasswordAuthentication getPasswordAuthentication() {

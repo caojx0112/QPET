@@ -62,24 +62,30 @@ public class UserController {
     @ResponseBody
     public Map getcode(int type,String textbox,HttpSession session){
         Map map=new HashMap();
-        String code = CodeUtil.getCode();
 
-        boolean flag=false;
-        if (type==1){
-            //短信发送....
-            flag = usersService.getCodeBySms(textbox, code);
-        }else{
-            flag = usersService.getCodeByEmail(textbox, code);
-        }
-        if (flag){//成功
-           session.setAttribute("code",code);
-           session.setAttribute("textbox",textbox);
-           session.setAttribute("codeStatus",false);
-           map.put("code",0);
-           map.put("msg","成功");
-        }else {//失败
+        Users users = usersService.login(textbox);
+        if (users==null){
+            String code = CodeUtil.getCode();
+            boolean flag=false;
+            if (type==1){
+                //短信发送....
+                flag = usersService.getCodeBySms(textbox, code);
+            }else{
+                flag = usersService.getCodeByEmail(textbox, code);
+            }
+            if (flag){//成功
+                session.setAttribute("code",code);
+                session.setAttribute("textbox",textbox);
+                session.setAttribute("codeStatus",false);
+                map.put("code",0);
+                map.put("msg","成功");
+            }else {//失败
+                map.put("code",1);
+                map.put("msg","失败");
+            }
+        }else {
             map.put("code",1);
-            map.put("msg","失败");
+            map.put("msg","该用户已注册，请直接登录");
         }
         return map;
     }
