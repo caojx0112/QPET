@@ -10,11 +10,24 @@
     <result column="couponsimage" jdbcType="VARCHAR" property="couponsimage" />
     <result column="begintime" jdbcType="TIMESTAMP" property="begintime" />
     <result column="endtime" jdbcType="TIMESTAMP" property="endtime" />
+    <collection property="usersCouponsList" ofType="com.qf.bean.UsersCoupons">
+      <id column="ucouponsid" jdbcType="INTEGER" property="ucouponsid" />
+      <result column="userid" jdbcType="INTEGER" property="userid" />
+      <result column="couponsid" jdbcType="INTEGER" property="couponsid" />
+      <result column="couponstatus" jdbcType="INTEGER" property="couponstatus" />
+    </collection>
   </resultMap>
   <sql id="Base_Column_List">
     couponsid, couponsname, couponsmoney, couponsrental, couponsstatus, couponsimage, 
     begintime, endtime
   </sql>
+  <select id="selectCoupons" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    *
+    from coupons,users_coupons
+    where users_coupons.couponsid=coupons.couponsid and userid = #{userid,jdbcType=INTEGER}
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

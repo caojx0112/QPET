@@ -2,6 +2,8 @@ package com.qf.dao;
 
 import com.qf.bean.Coupons;
 
+import java.util.List;
+
 public interface CouponsMapper {
     int deleteByPrimaryKey(Integer couponsid);
 
@@ -14,4 +16,8 @@ public interface CouponsMapper {
     int updateByPrimaryKeySelective(Coupons record);
 
     int updateByPrimaryKey(Coupons record);
+
+
+    List<Coupons> selectCoupons(Integer userid);
+
 }

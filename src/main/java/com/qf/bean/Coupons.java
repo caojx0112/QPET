@@ -1,6 +1,7 @@
 package com.qf.bean;
 
 import java.util.Date;
+import java.util.List;
 
 public class Coupons {
     private Integer couponsid;
@@ -18,6 +19,17 @@ public class Coupons {
     private Date begintime;
 
     private Date endtime;
+
+
+    private List<UsersCoupons> usersCouponsList;
+
+    public List<UsersCoupons> getUsersCouponsList() {
+        return usersCouponsList;
+    }
+
+    public void setUsersCouponsList(List<UsersCoupons> usersCouponsList) {
+        this.usersCouponsList = usersCouponsList;
+    }
 
     public Integer getCouponsid() {
         return couponsid;
