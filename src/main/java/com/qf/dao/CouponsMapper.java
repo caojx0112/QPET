@@ -16,9 +16,8 @@ public interface CouponsMapper {
     int updateByPrimaryKeySelective(Coupons record);
 
     int updateByPrimaryKey(Coupons record);
-<<<<<<< HEAD
+
 
     List<Coupons> selectCoupons(Integer userid);
-=======
->>>>>>> origin/master
+
 }

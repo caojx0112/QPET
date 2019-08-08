@@ -20,7 +20,7 @@ public class Coupons {
 
     private Date endtime;
 
-<<<<<<< HEAD
+
     private List<UsersCoupons> usersCouponsList;
 
     public List<UsersCoupons> getUsersCouponsList() {
@@ -31,8 +31,6 @@ public class Coupons {
         this.usersCouponsList = usersCouponsList;
     }
 
-=======
->>>>>>> origin/master
     public Integer getCouponsid() {
         return couponsid;
     }
