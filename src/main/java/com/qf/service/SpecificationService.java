@@ -1,12 +1,12 @@
-package com.qf.dao;
+package com.qf.service;
 
 import com.qf.bean.Specification;
 
 import java.util.List;
 
-public interface SpecificationMapper {
-
+public interface SpecificationService {
     List findAll();
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Specification record);

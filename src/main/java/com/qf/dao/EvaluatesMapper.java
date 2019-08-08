@@ -2,6 +2,8 @@ package com.qf.dao;
 
 import com.qf.bean.Evaluates;
 
+import java.util.List;
+
 public interface EvaluatesMapper {
     int deleteByPrimaryKey(Integer evaluateid);
 
@@ -14,6 +16,15 @@ public interface EvaluatesMapper {
     int updateByPrimaryKeySelective(Evaluates record);
 
     int updateByPrimaryKey(Evaluates record);
+<<<<<<< Updated upstream
     //查看评价数量
     int evaluatecount(Integer userid);
+=======
+
+    int findStar(int shopid);
+
+    int Count(int shopid);
+
+    List findById(int shopid);
+>>>>>>> Stashed changes
 }

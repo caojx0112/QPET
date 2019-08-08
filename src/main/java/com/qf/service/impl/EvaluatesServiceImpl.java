@@ -6,6 +6,7 @@ import com.qf.service.EvaluatesService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 别闹！学习呢！
@@ -18,6 +19,21 @@ public class EvaluatesServiceImpl implements EvaluatesService {
     @Override
     public int deleteByPrimaryKey(Integer evaluateid) {
         return 0;
+    }
+
+    @Override
+    public int findStar(int shopid) {
+        return evaluatesMapper.findStar(shopid);
+    }
+
+    @Override
+    public int Count(int shopid) {
+        return evaluatesMapper.Count(shopid);
+    }
+
+    @Override
+    public List findById(int shopid) {
+        return evaluatesMapper.findById(shopid);
     }
 
     @Override

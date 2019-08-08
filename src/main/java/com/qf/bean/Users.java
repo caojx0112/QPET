@@ -1,6 +1,7 @@
 package com.qf.bean;
 
 import java.util.Date;
+import java.util.List;
 
 public class Users {
     private Integer userid;
@@ -27,6 +28,7 @@ public class Users {
 
     private Date updatetime;
 
+<<<<<<< Updated upstream
     private Integer addressid;
 
     public Integer getAddressid() {
@@ -36,6 +38,9 @@ public class Users {
     public void setAddressid(Integer addressid) {
         this.addressid = addressid;
     }
+=======
+    private List<Evaluates> evaluates;
+>>>>>>> Stashed changes
 
     public Integer getUserid() {
         return userid;
@@ -131,5 +136,13 @@ public class Users {
 
     public void setAddressid(Integer addressid) {
         this.addressid = addressid;
+    }
+
+    public List<Evaluates> getEvaluates() {
+        return evaluates;
+    }
+
+    public void setEvaluates(List<Evaluates> evaluates) {
+        this.evaluates = evaluates;
     }
 }
