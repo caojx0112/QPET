@@ -28,4 +28,6 @@ public interface OrdersService {
     public List<OrdersList> findall(int userid);
     //订单-详情
     Orders findbyorderid(String orderid);
+    //订单-删除
+    boolean deleteorder(String orderid);
 }

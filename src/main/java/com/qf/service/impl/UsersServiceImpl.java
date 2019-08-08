@@ -30,17 +30,17 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public Users selectByPrimaryKey(Integer userid) {
-        return null;
+        return usersMapper.selectByPrimaryKey(userid);
     }
 
     @Override
     public int updateByPrimaryKeySelective(Users record) {
-        return 0;
+        return usersMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int updateByPrimaryKey(Users record) {
-        return 0;
+        return usersMapper.updateByPrimaryKey(record);
     }
 
     @Override

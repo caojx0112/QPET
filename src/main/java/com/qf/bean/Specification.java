@@ -9,6 +9,8 @@ public class Specification {
 
     private Integer shopnum;
 
+    private Integer spestatus;
+
     private Double shopmoney;
 
     public Integer getId() {
@@ -41,6 +43,14 @@ public class Specification {
 
     public void setShopnum(Integer shopnum) {
         this.shopnum = shopnum;
+    }
+
+    public Integer getSpestatus() {
+        return spestatus;
+    }
+
+    public void setSpestatus(Integer spestatus) {
+        this.spestatus = spestatus;
     }
 
     public Double getShopmoney() {
