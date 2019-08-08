@@ -127,13 +127,13 @@ public class OrdersController {
     @ResponseBody
     public Map evaluate(Evaluates evaluates, MultipartFile myfile, HttpServletRequest request) {
         try {
-            String realPath = request.getRealPath("/images");
+            String realPath = request.getRealPath("/image");
             System.out.println("realpath:"+realPath);
             myfile.transferTo(new File(realPath+"/"+myfile.getOriginalFilename()));
             //String s = realPath = realPath + "/" + myfile.getOriginalFilename();
             Date date = new Date();
             String format = DateFormat.format(date);
-            String url="http://129.28.91.97:8080/Qpet_ssm/images/"+format;
+            String url="http://129.28.91.97:8080/Qpet_ssm/image/"+format;
             System.out.println(url);
             evaluates.setEvaluateimage(url);
         } catch (IOException e) {
