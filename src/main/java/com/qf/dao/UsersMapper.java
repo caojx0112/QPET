@@ -18,4 +18,7 @@ public interface UsersMapper {
     Users selectByUsername(String username);
 
     int setPassword(Users record);
+
+    int selectEmoney(Integer userid);
+    int selectAddressid(Integer userid);
 }

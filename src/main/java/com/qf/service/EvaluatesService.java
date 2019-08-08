@@ -1,8 +1,8 @@
-package com.qf.dao;
+package com.qf.service;
 
 import com.qf.bean.Evaluates;
 
-public interface EvaluatesMapper {
+public interface EvaluatesService {
     int deleteByPrimaryKey(Integer evaluateid);
 
     int insert(Evaluates record);

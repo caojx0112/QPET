@@ -13,6 +13,10 @@
   <sql id="Base_Column_List">
     evaluateid, shopid, userid, evaluateimage,starlevel, content, createtime
   </sql>
+  <select id="evaluatecount" resultType="java.lang.Integer">
+    select count(*) from evaluates where userid=#{userid};
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

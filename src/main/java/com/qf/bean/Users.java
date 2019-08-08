@@ -27,6 +27,16 @@ public class Users {
 
     private Date updatetime;
 
+    private Integer addressid;
+
+    public Integer getAddressid() {
+        return addressid;
+    }
+
+    public void setAddressid(Integer addressid) {
+        this.addressid = addressid;
+    }
+
     public Integer getUserid() {
         return userid;
     }

@@ -23,4 +23,6 @@ public interface UsersService {
     boolean getCodeBySms(String phone,String code);
 
     int setPassword(Users record);
+    int selectEmoney(Integer userid);
+    int selectAddressid(Integer userid);
 }
