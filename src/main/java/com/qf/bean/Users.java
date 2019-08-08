@@ -21,6 +21,8 @@ public class Users {
 
     private Integer userstatus;
 
+    private Integer addressid;
+
     private Date createtime;
 
     private Date updatetime;
@@ -111,5 +113,13 @@ public class Users {
 
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
+    }
+
+    public Integer getAddressid() {
+        return addressid;
+    }
+
+    public void setAddressid(Integer addressid) {
+        this.addressid = addressid;
     }
 }

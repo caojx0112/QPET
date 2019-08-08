@@ -1,5 +1,7 @@
 package com.qf.bean;
 
+import java.util.Date;
+
 public class Evaluates {
     private Integer evaluateid;
 
@@ -10,6 +12,8 @@ public class Evaluates {
     private String evaluateimage;
 
     private String content;
+
+    private Date createtime;
 
     public Integer getEvaluateid() {
         return evaluateid;
@@ -49,5 +53,13 @@ public class Evaluates {
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
     }
 }

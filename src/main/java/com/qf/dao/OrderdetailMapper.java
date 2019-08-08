@@ -5,6 +5,8 @@ import com.qf.bean.Orderdetail;
 import java.util.List;
 
 public interface OrderdetailMapper {
+    List<Orderdetail> findshopidbyorderid(String orderid);
+
     List<Orderdetail> findbyOrderid(String orderid);
 
     int deleteByPrimaryKey(Integer deatilid);
