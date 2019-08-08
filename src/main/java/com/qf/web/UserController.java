@@ -270,4 +270,26 @@ public class UserController {
         }
         return map;
     }
+
+    /*
+    * 我的--信息展示
+    * */
+    @RequestMapping(value = "api/userinfo/select",method = RequestMethod.GET)
+    @ResponseBody
+    public Map select(int userid){
+        Users users = usersService.selectByPrimaryKey(userid);
+        Map map=new HashMap();
+        if(users!=null) {
+            map.put("code", 0);
+            map.put("msg", "成功");
+            map.put("data", users);
+            return map;
+        }
+        map.put("code", 1);
+        map.put("msg", "失败");
+        map.put("data", users);
+        return map;
+    }
+
+
 }

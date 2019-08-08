@@ -6,10 +6,11 @@
     <result column="shopid" jdbcType="INTEGER" property="shopid" />
     <result column="shopwegiht" jdbcType="VARCHAR" property="shopwegiht" />
     <result column="shopnum" jdbcType="INTEGER" property="shopnum" />
+    <result column="spestatus" jdbcType="INTEGER" property="spestatus" />
     <result column="shopmoney" jdbcType="DOUBLE" property="shopmoney" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, shopid, shopwegiht, shopnum, shopmoney
+    id, shopid, shopwegiht, shopnum,spestatus, shopmoney
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -23,9 +24,9 @@
   </delete>
   <insert id="insert" parameterType="com.qf.bean.Specification">
     insert into specification (id, shopid, shopwegiht, 
-      shopnum, shopmoney)
+      shopnum, spestatus,shopmoney)
     values (#{id,jdbcType=INTEGER}, #{shopid,jdbcType=INTEGER}, #{shopwegiht,jdbcType=VARCHAR}, 
-      #{shopnum,jdbcType=INTEGER}, #{shopmoney,jdbcType=DOUBLE})
+      #{shopnum,jdbcType=INTEGER},#{spestatus,jdbcType=INTEGER}, #{shopmoney,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" parameterType="com.qf.bean.Specification">
     insert into specification
@@ -41,6 +42,9 @@
       </if>
       <if test="shopnum != null">
         shopnum,
+      </if>
+      <if test="spestatus != null">
+        spestatus,
       </if>
       <if test="shopmoney != null">
         shopmoney,
@@ -59,6 +63,9 @@
       <if test="shopnum != null">
         #{shopnum,jdbcType=INTEGER},
       </if>
+      <if test="spestatus != null">
+        #{spestatus,jdbcType=INTEGER},
+      </if>
       <if test="shopmoney != null">
         #{shopmoney,jdbcType=DOUBLE},
       </if>
@@ -76,6 +83,9 @@
       <if test="shopnum != null">
         shopnum = #{shopnum,jdbcType=INTEGER},
       </if>
+      <if test="spestatus != null">
+        spestatus = #{spestatus,jdbcType=INTEGER},
+      </if>
       <if test="shopmoney != null">
         shopmoney = #{shopmoney,jdbcType=DOUBLE},
       </if>
@@ -87,6 +97,7 @@
     set shopid = #{shopid,jdbcType=INTEGER},
       shopwegiht = #{shopwegiht,jdbcType=VARCHAR},
       shopnum = #{shopnum,jdbcType=INTEGER},
+      spestatus = #{spestatus,jdbcType=INTEGER},
       shopmoney = #{shopmoney,jdbcType=DOUBLE}
     where id = #{id,jdbcType=INTEGER}
   </update>

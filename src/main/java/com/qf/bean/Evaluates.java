@@ -15,6 +15,16 @@ public class Evaluates {
 
     private Date createtime;
 
+    private Integer starlevel;
+
+    public Integer getStarlevel() {
+        return starlevel;
+    }
+
+    public void setStarlevel(Integer starlevel) {
+        this.starlevel = starlevel;
+    }
+
     public Integer getEvaluateid() {
         return evaluateid;
     }
