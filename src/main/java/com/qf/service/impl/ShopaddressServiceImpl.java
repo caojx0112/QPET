@@ -19,8 +19,8 @@ public class ShopaddressServiceImpl implements ShopaddressService {
 
 
     @Override
-    public List<Shopaddress> selectByPrimaryKey(int userid) {
-        return shopaddressMapper.selectByPrimaryKey(userid);
+    public Shopaddress selectByPrimaryKey(int addressid) {
+        return shopaddressMapper.selectByPrimaryKey(addressid);
     }
 
     @Override
@@ -48,5 +48,10 @@ public class ShopaddressServiceImpl implements ShopaddressService {
     @Override
     public int updateByPrimaryKey(Shopaddress record) {
         return 0;
+    }
+
+    @Override
+    public List<Shopaddress> selectAdderssByuserid(int userid) {
+        return shopaddressMapper.selectAdderssByuserid(userid);
     }
 }

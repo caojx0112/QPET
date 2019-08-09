@@ -28,19 +28,8 @@ public class Users {
 
     private Date updatetime;
 
-<<<<<<< Updated upstream
-    private Integer addressid;
+    private List<Evaluates> evaluatesList;
 
-    public Integer getAddressid() {
-        return addressid;
-    }
-
-    public void setAddressid(Integer addressid) {
-        this.addressid = addressid;
-    }
-=======
-    private List<Evaluates> evaluates;
->>>>>>> Stashed changes
 
     public Integer getUserid() {
         return userid;

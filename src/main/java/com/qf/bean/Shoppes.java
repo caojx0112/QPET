@@ -1,15 +1,8 @@
 package com.qf.bean;
 
 import java.util.Date;
-import java.util.List;
 
 public class Shoppes {
-    private List evaluateimage;
-
-    private List evaluates;
-
-    private List specification;
-
     private Integer shopid;
 
     private String shopname;

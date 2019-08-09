@@ -1,3 +1,4 @@
+/*
 package com.qf.web;
 
 import com.qf.bean.Evaluates;
@@ -22,21 +23,25 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+*/
 /**
  * ** 程序猿
  * 一入代码深似海，
  * 小试牛刀异常来。
  * 奈何BUG直挠耳，
  * 仰天大笑出门来。
- */
+ *//*
+
 @Controller
 public class OrdersController {
     @Resource
     private OrdersService ordersService;
 
+*/
 /*
 *订单结算---提交订单
- */
+ *//*
+
     @RequestMapping(value = "/api/submitorder",method = RequestMethod.POST)
     @ResponseBody
     public Map submitorder(Orders orders,String shops){
@@ -62,9 +67,11 @@ public class OrdersController {
         return map;
     }
 
-    /*
+    */
+/*
      * 订单结算---支付
-     * */
+     * *//*
+
     @RequestMapping(value = "/api/payfororder",method = RequestMethod.GET)
     @ResponseBody
     public DataView payfororder(Orders orders){
@@ -81,9 +88,11 @@ public class OrdersController {
         dataView.setData(null);
         return dataView;
     }
-    /*
+    */
+/*
     * 取消订单
-    * */
+    * *//*
+
     @RequestMapping(value = "/api/cancelorder",method = RequestMethod.GET)
     @ResponseBody
     public DataView deleteorder(String orderid,Integer userid){
@@ -101,9 +110,11 @@ public class OrdersController {
         return dataView;
     }
 
-    /*
+    */
+/*
     * 确认收货
-    * */
+    * *//*
+
     @RequestMapping(value = "/api/shouhuo",method = RequestMethod.GET)
     @ResponseBody
     public DataView shouhuo(String orderid,Integer userid){
@@ -120,9 +131,11 @@ public class OrdersController {
         dataView.setData(null);
         return dataView;
     }
-    /*
+    */
+/*
     * 订单--好评
-    * */
+    * *//*
+
     @RequestMapping(value = "api/evaluate",method = RequestMethod.POST)
     @ResponseBody
     public Map evaluate(Evaluates evaluates, MultipartFile myfile, HttpServletRequest request) {
@@ -152,9 +165,11 @@ public class OrdersController {
 
     }
 
-    /*
+    */
+/*
     * 查看订单列表
-    * */
+    * *//*
+
     @RequestMapping(value = "/api/showorder",method = RequestMethod.GET)
     @ResponseBody
     public DataView showorder(int userid){
@@ -172,9 +187,11 @@ public class OrdersController {
         return dataView;
     }
 
-    /*
+    */
+/*
      * 查看订单详情
-     * */
+     * *//*
+
     @RequestMapping(value = "/api/showorderdetail",method = RequestMethod.GET)
     @ResponseBody
     public Map showorderdetail(String orderid){
@@ -192,9 +209,11 @@ public class OrdersController {
         return map;
     }
 
-    /*
+    */
+/*
      * 删除订单
-     * */
+     * *//*
+
     @RequestMapping(value = "/api/deleteorder",method = RequestMethod.GET)
     @ResponseBody
     public Map deleteorder(String orderid){
@@ -211,3 +230,4 @@ public class OrdersController {
     }
 
 }
+*/

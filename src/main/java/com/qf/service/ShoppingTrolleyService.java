@@ -12,7 +12,10 @@ public interface ShoppingTrolleyService {
 
     int insertSelective(ShoppingTrolley record);
 
-    List<ShoppingTrolley> selectByPrimaryKey(Integer userid);
+    ShoppingTrolley selectByPrimaryKey(Integer shopcard);
+
+
+    List<ShoppingTrolley> selectAll(Integer userid);
 
     int updateByPrimaryKeySelective(ShoppingTrolley shoppingTrolley);
 
