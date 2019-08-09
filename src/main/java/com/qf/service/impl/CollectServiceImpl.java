@@ -21,7 +21,7 @@ public class CollectServiceImpl implements CollectService {
 
     @Override
     public int insert(Collect record) {
-        return 0;
+        return collectMapper.insert(record);
     }
 
     @Override

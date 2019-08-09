@@ -1,8 +1,15 @@
 package com.qf.bean;
 
 import java.util.Date;
+import java.util.List;
 
 public class Shoppes {
+    private List evaluateimage;
+
+    private List evaluates;
+
+    private List specification;
+
     private Integer shopid;
 
     private String shopname;
@@ -50,6 +57,10 @@ public class Shoppes {
     private Date putawaytime;
 
     private String shopweight;  //商品规格
+
+    private String feedback;
+
+    private Integer evaluatescount;
 
     public String getShopweight() {
         return shopweight;
@@ -241,5 +252,45 @@ public class Shoppes {
 
     public void setPutawaytime(Date putawaytime) {
         this.putawaytime = putawaytime;
+    }
+
+    public List getEvaluateimage() {
+        return evaluateimage;
+    }
+
+    public void setEvaluateimage(List evaluateimage) {
+        this.evaluateimage = evaluateimage;
+    }
+
+    public List getEvaluates() {
+        return evaluates;
+    }
+
+    public void setEvaluates(List evaluates) {
+        this.evaluates = evaluates;
+    }
+
+    public List getSpecification() {
+        return specification;
+    }
+
+    public void setSpecification(List specification) {
+        this.specification = specification;
+    }
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
+    }
+
+    public Integer getEvaluatescount() {
+        return evaluatescount;
+    }
+
+    public void setEvaluatescount(Integer evaluatescount) {
+        this.evaluatescount = evaluatescount;
     }
 }

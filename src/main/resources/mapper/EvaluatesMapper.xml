@@ -9,14 +9,76 @@
     <result column="starlevel" jdbcType="INTEGER" property="starlevel" />
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <association property="shoppes" javaType="com.qf.bean.Shoppes">
+      <id column="shopid" jdbcType="INTEGER" property="shopid" />
+      <result column="shopname" jdbcType="VARCHAR" property="shopname" />
+      <result column="type" jdbcType="INTEGER" property="type" />
+      <result column="typeid" jdbcType="INTEGER" property="typeid" />
+      <result column="shopnum" jdbcType="INTEGER" property="shopnum" />
+      <result column="shopsales" jdbcType="INTEGER" property="shopsales" />
+      <result column="oldprice" jdbcType="DOUBLE" property="oldprice" />
+      <result column="newprice" jdbcType="DOUBLE" property="newprice" />
+      <result column="shopimage" jdbcType="VARCHAR" property="shopimage" />
+      <result column="content" jdbcType="VARCHAR" property="content" />
+      <result column="shopstatus" jdbcType="INTEGER" property="shopstatus" />
+      <result column="emoney" jdbcType="INTEGER" property="emoney" />
+      <result column="petbodily" jdbcType="VARCHAR" property="petbodily" />
+      <result column="woollength" jdbcType="VARCHAR" property="woollength" />
+      <result column="pettype" jdbcType="VARCHAR" property="pettype" />
+      <result column="petcolor" jdbcType="VARCHAR" property="petcolor" />
+      <result column="petblood" jdbcType="INTEGER" property="petblood" />
+      <result column="petclean" jdbcType="INTEGER" property="petclean" />
+      <result column="petvideo" jdbcType="INTEGER" property="petvideo" />
+      <result column="recipe" jdbcType="VARCHAR" property="recipe" />
+      <result column="suitableage" jdbcType="INTEGER" property="suitableage" />
+      <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+      <result column="putawaytime" jdbcType="TIMESTAMP" property="putawaytime" />
+    </association>
+    <association property="users" javaType="com.qf.bean.Users">
+      <id column="userid" jdbcType="INTEGER" property="userid"/>
+      <result column="username" jdbcType="VARCHAR" property="username"/>
+      <result column="nickname" jdbcType="VARCHAR" property="nickname"/>
+      <result column="password" jdbcType="VARCHAR" property="password"/>
+      <result column="userimages" jdbcType="VARCHAR" property="userimages"/>
+      <result column="usersex" jdbcType="VARCHAR" property="usersex"/>
+      <result column="birthday" jdbcType="DATE" property="birthday"/>
+      <result column="emoney" jdbcType="DOUBLE" property="emoney"/>
+      <result column="userstatus" jdbcType="INTEGER" property="userstatus"/>
+      <result column="createtime" jdbcType="TIMESTAMP" property="createtime"/>
+      <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime"/>
+    </association>
+    <association property="shopdetails" javaType="com.qf.bean.Shopdetail">
+      <id column="shopdeatilid" jdbcType="INTEGER" property="shopdeatilid" />
+      <result column="detailimages" jdbcType="VARCHAR" property="detailimages" />
+      <result column="shopid" jdbcType="INTEGER" property="shopid" />
+    </association>
+
   </resultMap>
   <sql id="Base_Column_List">
     evaluateid, shopid, userid, evaluateimage,starlevel, content, createtime
   </sql>
+<<<<<<< Updated upstream
   <select id="evaluatecount" resultType="java.lang.Integer">
     select count(*) from evaluates where userid=#{userid};
   </select>
 
+=======
+
+  <select id="findById" resultMap="BaseResultMap">
+    select * from evaluates e,users u where e.userid=u.userid and e.shopid=#{shopid}
+  </select>
+
+  <select id="findStar" resultType="Integer">
+        select starlevel from evaluates where 1=1 and starlevel<![CDATA[>=]]> 3 and shopid=#{shopid}
+    </select>
+
+  <select id="Count" resultType="Integer" >
+        select count(shopid) from evaluates where shopid=#{shopid}
+    </select>
+
+
+
+>>>>>>> Stashed changes
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

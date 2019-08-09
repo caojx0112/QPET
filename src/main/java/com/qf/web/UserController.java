@@ -136,7 +136,7 @@ public class UserController {
                 users.setUsername(textbox);
                 users.setPassword(new MD5().getMD5ofStr(password));
                 users.setNickname("小Q君");
-                users.setUserimages("image/dfhead.jpg");
+                users.setUserimages("http://129.28.91.97:8080/Qpet_ssm/image/dfhead.jpg");
                 Date date=new Date();
                 date.setYear(100);
                 date.setMonth(0);

@@ -5,6 +5,8 @@ import com.qf.bean.Shoppes;
 import java.util.List;
 
 public interface ShoppesService {
+    Shoppes findById(int shopid);
+
     int deleteByPrimaryKey(Integer shopid);
 
     int insert(Shoppes record);
