@@ -1,6 +1,7 @@
 package com.qf.bean;
 
 import java.util.Date;
+import java.util.List;
 
 public class Shoppes {
     private Integer shopid;
@@ -54,6 +55,14 @@ public class Shoppes {
     private String feedback;
 
     private Integer evaluatescount;
+
+    private String  dogtype;
+
+    private List evaluates;
+
+    private List specification;
+
+    private List evaluateimage;
 
     public String getShopweight() {
         return shopweight;
@@ -285,5 +294,13 @@ public class Shoppes {
 
     public void setEvaluatescount(Integer evaluatescount) {
         this.evaluatescount = evaluatescount;
+    }
+
+    public String getDogtype() {
+        return dogtype;
+    }
+
+    public void setDogtype(String dogtype) {
+        this.dogtype = dogtype;
     }
 }

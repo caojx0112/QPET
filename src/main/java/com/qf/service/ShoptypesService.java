@@ -1,9 +1,9 @@
-package com.qf.dao;
+package com.qf.service;
 
 import com.qf.bean.Shoptypes;
 
-public interface ShoptypesMapper {
 
+public interface ShoptypesService {
     int deleteByPrimaryKey(Integer typeid);
 
     int insert(Shoptypes record);

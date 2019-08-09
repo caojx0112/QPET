@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.qf.bean.Eva;
 import com.qf.bean.Evaluates;
 import com.qf.bean.Shoppes;
+import com.qf.bean.Shoptypes;
 import com.qf.dao.ShoppesMapper;
 import com.qf.service.ShoppesService;
 import com.qf.service.SpecificationService;
@@ -28,6 +29,9 @@ public class ShoppesServiceImpl implements ShoppesService {
     @Resource
     private SpecificationService specificationService;
 
+    @Resource
+    private ShoptypesServiceImpl shoptypesService;
+
     @Override
     public Shoppes findById(int shopid) {
         Shoppes shoppes = shoppesMapper.findById(shopid);
@@ -43,10 +47,12 @@ public class ShoppesServiceImpl implements ShoppesService {
             DecimalFormat df = new DecimalFormat("##.##");
             String format = df.format(b * 100);
 
+            Shoptypes shoptypes = shoptypesService.selectByPrimaryKey(shoppes.getTypeid());
+            shoppes.setDogtype(shoptypes.getTypename());
             shoppes.setFeedback(format);
             shoppes.setEvaluatescount(count);
         }
-        List all = specificationService.findAll();
+        List all = specificationService.findAll(shopid);
         shoppes.setSpecification(all);
         List<Evaluates> evaluates = evaluatesService.findById(shopid);
 
