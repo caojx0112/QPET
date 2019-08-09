@@ -267,6 +267,18 @@ public class UserController {
         }
         return map;
     }
+    @RequestMapping(value = "/api/islogin",method = RequestMethod.GET)
+    @ResponseBody
+    public Map islogin(HttpSession session){
+        Map map=new HashMap();
+        Object users = session.getAttribute("users");
+        if (users!=null) {
+            map.put("status","true");
+        }else {
+            map.put("status","false");
+        }
+        return map;
+    }
 
     /*
      * 我的--信息展示
