@@ -20,11 +20,9 @@ public interface EvaluatesMapper {
     //查看评价数量
     int evaluatecount(Integer userid);
 
-
     int findStar(int shopid);
 
     int Count(int shopid);
 
     List findById(int shopid);
-
 }
