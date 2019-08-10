@@ -1,9 +1,11 @@
-package com.qf.dao;
+package com.qf.service;
 
 import com.qf.bean.Specification;
 
-public interface SpecificationMapper {
+import java.util.List;
 
+public interface SpecificationService {
+    List findAll();
 
     int deleteByPrimaryKey(Integer id);
 

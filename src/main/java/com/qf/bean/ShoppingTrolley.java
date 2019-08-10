@@ -23,6 +23,7 @@ public class ShoppingTrolley {
 
     private Shoppes shoppes;
 
+
     public Shoppes getShoppes() {
         return shoppes;
     }
