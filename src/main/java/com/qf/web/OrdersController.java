@@ -129,10 +129,12 @@ public class OrdersController {
         try {
             String realPath = request.getRealPath("/image");
             System.out.println("realpath:"+realPath);
-            myfile.transferTo(new File(realPath+"/"+myfile.getOriginalFilename()));
-            //String s = realPath = realPath + "/" + myfile.getOriginalFilename();
             Date date = new Date();
             String format = DateFormat.format(date);
+            myfile.transferTo(new File(realPath+"/"+format));
+            //String s = realPath = realPath + "/" + myfile.getOriginalFilename();
+
+
             String url="http://129.28.91.97:8080/Qpet_ssm/image/"+format;
             System.out.println(url);
             evaluates.setEvaluateimage(url);

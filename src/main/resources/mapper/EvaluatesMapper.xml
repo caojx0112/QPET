@@ -57,12 +57,11 @@
   <sql id="Base_Column_List">
     evaluateid, shopid, userid, evaluateimage,starlevel, content, createtime
   </sql>
-<<<<<<< Updated upstream
   <select id="evaluatecount" resultType="java.lang.Integer">
     select count(*) from evaluates where userid=#{userid};
   </select>
 
-=======
+
 
   <select id="findById" resultMap="BaseResultMap">
     select * from evaluates e,users u where e.userid=u.userid and e.shopid=#{shopid}
@@ -77,8 +76,6 @@
     </select>
 
 
-
->>>>>>> Stashed changes
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
