@@ -1,9 +1,8 @@
-package com.qf.dao;
+package com.qf.service;
 
 import com.qf.bean.Shopdetail;
 
-public interface ShopdetailMapper {
-
+public interface ShopdetailService {
     Shopdetail findItemimag(int id);
 
     int deleteByPrimaryKey(Integer shopdeatilid);

@@ -4,6 +4,7 @@ import com.qf.bean.Users;
 import com.qf.dao.UsersMapper;
 import com.qf.service.UsersService;
 import com.qf.util.SendEmail;
+import com.qf.util.SendSms;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -39,7 +40,7 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public int updateByPrimaryKey(Users record) {
-        return 0;
+        return usersMapper.updateByPrimaryKey(record);
     }
 
     @Override
@@ -69,11 +70,20 @@ public class UsersServiceImpl implements UsersService {
         return send;
     }
 
+    /**
+     * 短信获取验证码
+     * @param phone
+     * @param code
+     * @return
+     */
     @Override
     public boolean getCodeBySms(String phone, String code) {
+        int send = SendSms.send(phone, code);
+        if (send==0){
+            return true;
+        }
         return false;
     }
-
     /**
      * 修改密码
      * @param record

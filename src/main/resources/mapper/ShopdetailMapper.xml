@@ -9,6 +9,10 @@
   <sql id="Base_Column_List">
     shopdeatilid, detailimages, shopid
   </sql>
+  <select id="findItemimag" resultMap="BaseResultMap">
+        select detailimages from shopdetail where shopid=#{id}
+    </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

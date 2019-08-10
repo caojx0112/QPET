@@ -1,8 +1,15 @@
 package com.qf.bean;
 
 import java.util.Date;
+import java.util.List;
 
 public class Shoppes {
+    private List evaluateimage;
+
+    private List evaluates;
+
+    private List specification;
+
     private Integer shopid;
 
     private String shopname;
@@ -48,6 +55,16 @@ public class Shoppes {
     private Date createtime;
 
     private Date putawaytime;
+
+    private String shopweight;  //商品规格
+
+    public String getShopweight() {
+        return shopweight;
+    }
+
+    public void setShopweight(String shopweight) {
+        this.shopweight = shopweight;
+    }
 
     public Integer getShopid() {
         return shopid;

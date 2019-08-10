@@ -19,7 +19,7 @@ public class SpecificationServiceImpl implements SpecificationService {
     @Override
     public List findAll() {
 
-        return null;
+        return specificationMapper.findAll();
     }
 
     @Override

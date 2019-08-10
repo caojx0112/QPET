@@ -20,7 +20,7 @@ public interface ShoppingTrolleyService {
     int updateByPrimaryKeySelective(ShoppingTrolley shoppingTrolley);
 
     int updateByPrimaryKey(ShoppingTrolley record);
-    ShoppingTrolley selectShoppingTrolley(Integer userid,Integer shopid);
+    ShoppingTrolley selectShoppingTrolley(Integer userid, Integer shopid);
 
     List<ShoppingTrolley> selectShoppes(String shoppes);
 }

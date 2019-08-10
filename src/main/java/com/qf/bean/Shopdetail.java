@@ -6,6 +6,15 @@ public class Shopdetail {
     private String detailimages;
 
     private Integer shopid;
+    private Evaluates evaluates;
+
+    public Evaluates getEvaluates() {
+        return evaluates;
+    }
+
+    public void setEvaluates(Evaluates evaluates) {
+        this.evaluates = evaluates;
+    }
 
     public Integer getShopdeatilid() {
         return shopdeatilid;

@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -73,22 +75,30 @@ public class UserController {
     @ResponseBody
     public Map getcode(int type,String textbox,HttpSession session){
         Map map=new HashMap();
-        String code = CodeUtil.getCode();
 
-        boolean flag=false;
-        if (type==1){
-            //短信发送....
-        }else{
-            flag = usersService.getCodeByEmail(textbox, code);
-        }
-        if (flag){//成功
-           session.setAttribute("code",code);
-           session.setAttribute("textbox",textbox);
-           map.put("code",0);
-           map.put("msg","成功");
-        }else {//失败
+        Users users = usersService.login(textbox);
+        if (users==null){
+            String code = CodeUtil.getCode();
+            boolean flag=false;
+            if (type==1){
+                //短信发送....
+                flag = usersService.getCodeBySms(textbox, code);
+            }else{
+                flag = usersService.getCodeByEmail(textbox, code);
+            }
+            if (flag){//成功
+                session.setAttribute("code",code);
+                session.setAttribute("textbox",textbox);
+                session.setAttribute("codeStatus",false);
+                map.put("code",0);
+                map.put("msg","成功");
+            }else {//失败
+                map.put("code",1);
+                map.put("msg","失败");
+            }
+        }else {
             map.put("code",1);
-            map.put("msg","失败");
+            map.put("msg","该用户已注册，请直接登录");
         }
         return map;
     }
@@ -136,7 +146,17 @@ public class UserController {
                 Users users=new Users();
                 users.setUsername(textbox);
                 users.setPassword(new MD5().getMD5ofStr(password));
-                System.out.println(users.getUsername());
+                users.setNickname("小Q君");
+                users.setUserimages("http://129.28.91.97:8080/Qpet_ssm/image/dfhead.jpg");
+                Date date=new Date();
+                date.setYear(100);
+                date.setMonth(0);
+                date.setDate(1);
+                users.setBirthday(date);
+                users.setEmoney(0);
+                users.setUserstatus(1);
+                users.setCreatetime(new Date());
+                users.setUsersex("保密");
                 int i = usersService.insertSelective(users);
                 if (i>0){
                     map.put("code",0);
@@ -173,12 +193,14 @@ public class UserController {
         }else {
             if (type==1){
                 //短信发送....
+                flag=usersService.getCodeBySms(textbox,code);
             }else{
                 flag = usersService.getCodeByEmail(textbox, code);
             }
             if (flag){//成功
                 session.setAttribute("regcode",code);
                 session.setAttribute("regtextbox",textbox);
+                session.setAttribute("regcodeStatus",false);
                 map.put("code",0);
                 map.put("msg","成功");
             }else {//失败
@@ -247,37 +269,38 @@ public class UserController {
         }
         return map;
     }
-
-    /**
-     * 个人中心
-     * @param userid
-     * @return
-     */
-    @RequestMapping(method = RequestMethod.GET,value = "api/personlist")
+    @RequestMapping(value = "/api/islogin",method = RequestMethod.GET)
     @ResponseBody
-    public Map personlist(int userid){
-        Users users = usersService.selectByPrimaryKey(userid);
-        int ordersCount= ordersService.SelectOrdersCount(userid);
-        int obligationcount = ordersService.obligationcount(userid);
-        int delivercount = ordersService.delivercount(userid);
-        int receivingcount = ordersService.receivingcount(userid);
-        int evaluatecount = evaluatesService.evaluatecount(userid);
-        int collectcount = collectService.collectcount(userid);
+    public Map islogin(HttpSession session){
         Map map=new HashMap();
-        Map map1=new HashMap();
-        map.put("code",0);
-        map.put("msg","成功");
-        map.put("data",map1);
-        map1.put("userimages",users.getUserimages());
-        map1.put("username",users.getUsername());
-        map1.put("nickname",users.getNickname());
-        map1.put("ordercount",ordersCount);
-        map1.put("obligationcount",obligationcount);
-        map1.put("delivercount",delivercount);
-        map1.put("receivingcount",receivingcount);
-        map1.put("evaluatecount",evaluatecount);
-        map1.put("collectcount",collectcount);
+        Object users = session.getAttribute("users");
+        if (users!=null) {
+            map.put("status","true");
+        }else {
+            map.put("status","false");
+        }
         return map;
     }
+
+    /*
+    * 我的--信息展示
+    * */
+    @RequestMapping(value = "api/userinfo/select",method = RequestMethod.GET)
+    @ResponseBody
+    public Map select(int userid){
+        Users users = usersService.selectByPrimaryKey(userid);
+        Map map=new HashMap();
+        if(users!=null) {
+            map.put("code", 0);
+            map.put("msg", "成功");
+            map.put("data", users);
+            return map;
+        }
+        map.put("code", 1);
+        map.put("msg", "失败");
+        map.put("data", users);
+        return map;
+    }
+
 
 }

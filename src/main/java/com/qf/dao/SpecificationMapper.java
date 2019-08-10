@@ -2,8 +2,11 @@ package com.qf.dao;
 
 import com.qf.bean.Specification;
 
+import java.util.List;
+
 public interface SpecificationMapper {
 
+    List findAll();
 
     int deleteByPrimaryKey(Integer id);
 

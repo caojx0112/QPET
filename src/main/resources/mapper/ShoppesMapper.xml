@@ -31,6 +31,12 @@
     content, shopstatus, emoney, petbodily, woollength, pettype, petcolor, petblood, 
     petclean, petvideo, recipe, suitableage, createtime, putawaytime
   </sql>
+  <select id="findById" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from shoppes where shopid=#{shopid}
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

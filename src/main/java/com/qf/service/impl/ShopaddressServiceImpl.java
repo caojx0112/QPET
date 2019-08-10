@@ -49,9 +49,4 @@ public class ShopaddressServiceImpl implements ShopaddressService {
     public int updateByPrimaryKey(Shopaddress record) {
         return 0;
     }
-
-    @Override
-    public List<Shopaddress> selectAdderssByuserid(int userid) {
-        return shopaddressMapper.selectAdderssByuserid(userid);
-    }
 }

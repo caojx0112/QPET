@@ -17,6 +17,16 @@ public class Evaluates {
 
     private Integer starlevel;
 
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
+    }
+
+    private Users users;
+
     public Integer getStarlevel() {
         return starlevel;
     }

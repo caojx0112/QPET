@@ -12,6 +12,13 @@
   <sql id="Base_Column_List">
     id, shopid, shopwegiht, shopnum,spestatus, shopmoney
   </sql>
+
+  <select id="findAll" resultMap="BaseResultMap">
+    select
+    id, shopwegiht, shopnum, shopmoney, spestatus
+    from specification
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
