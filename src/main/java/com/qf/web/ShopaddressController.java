@@ -31,21 +31,12 @@ public class ShopaddressController {
      * @return
      */
     @RequestMapping(method = RequestMethod.POST,value = "api/addaddress")
-    public Map addressadd(Shopaddress shopaddress,Integer defaultaddress){
+    public Map addressadd(Shopaddress shopaddress){
         int i = shopaddressService.insertSelective(shopaddress);
-       if (defaultaddress==1){
-            Users users = usersService.selectByPrimaryKey(shopaddress.getUserid());
-            users.setAddressid(shopaddress.getAddressid());
-           int i1 = usersService.updateByPrimaryKeySelective(users);
-       }
-
         Map map=new HashMap();
-        Map map1=new HashMap();
-
         map.put("code",0);
         map.put("msg","成功");
-        map1.put("addressid",shopaddress.getAddressid());
-        map.put("data",map1);
+        map.put("data",shopaddress.getAddressid());
         return map;
     }
 
@@ -56,36 +47,26 @@ public class ShopaddressController {
      * @return
      */
     @RequestMapping(method = RequestMethod.GET,value = "api/selectaddress")
-    public DataView selectaddress(int userid){
-        DataView<Shopaddress> dataView=new DataView<>();
+    public Map selectaddress(int userid){
+        DataView<Shopaddress> shopaddressDataView=new DataView<>();
         int addressid= usersService.selectAddressid(userid);
-        List<Shopaddress> shopaddressList = shopaddressService.selectAdderssByuserid(userid);
-        List list=new ArrayList();
-        dataView.setCode(0);
-        dataView.setMsg("成功");
         Map map=new HashMap();
-        map.put("defaultaddress",addressid);
-        //Map map1=new HashMap();
-        //map1.put("shopaddressList",shopaddressList);
-        map.put("shopaddressList",shopaddressList);
-        list.add(map);
-        dataView.setData(list);
-        return dataView;
+        Map map1=new HashMap();
+        map.put("code",0);
+        map.put("msg","成功");
+        map1.put("defaultaddress",addressid);
+        List<Shopaddress> shopaddressList = shopaddressService.selectByPrimaryKey(userid);
+        map1.put("shopaddressList",shopaddressList);
+        map.put("data",map1);
+        return map;
     }
 
     /**
      * 收货地址--编辑
      */
     @RequestMapping(method = RequestMethod.POST,value = "api/updateaddress")
-    public Map updateaddress(Shopaddress shopaddress,Integer defaultaddress){
+    public Map updateaddress(Shopaddress shopaddress){
         int i = shopaddressService.updateByPrimaryKeySelective(shopaddress);
-        Shopaddress shopaddress1 =
-                shopaddressService.selectByPrimaryKey(shopaddress.getAddressid());
-        if (defaultaddress==1){
-            Users users = usersService.selectByPrimaryKey(shopaddress1.getUserid());
-            users.setAddressid(shopaddress.getAddressid());
-            int i1 = usersService.updateByPrimaryKeySelective(users);
-        }
         Map map=new HashMap();
         if (i>0){
             map.put("code",0);

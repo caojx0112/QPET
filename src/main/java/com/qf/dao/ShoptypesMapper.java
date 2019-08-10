@@ -3,7 +3,6 @@ package com.qf.dao;
 import com.qf.bean.Shoptypes;
 
 public interface ShoptypesMapper {
-
     int deleteByPrimaryKey(Integer typeid);
 
     int insert(Shoptypes record);

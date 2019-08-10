@@ -15,8 +15,6 @@ public class Shopaddress {
         return addressid;
     }
 
-
-
     public void setAddressid(Integer addressid) {
         this.addressid = addressid;
     }

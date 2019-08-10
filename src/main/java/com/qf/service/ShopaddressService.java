@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ShopaddressService {
 
-    Shopaddress selectByPrimaryKey(int addressid);
+    public List<Shopaddress> selectByPrimaryKey(int userid);
 
     int deleteByPrimaryKey(Integer addressid);
 
@@ -18,6 +18,4 @@ public interface ShopaddressService {
     int updateByPrimaryKeySelective(Shopaddress record);
 
     int updateByPrimaryKey(Shopaddress record);
-    public List<Shopaddress> selectAdderssByuserid(int userid);
-
 }

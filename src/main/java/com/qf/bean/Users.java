@@ -28,8 +28,8 @@ public class Users {
 
     private Date updatetime;
 
-
     private List<Evaluates> evaluates;
+
 
     public Integer getUserid() {
         return userid;

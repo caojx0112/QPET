@@ -1,9 +1,6 @@
 package com.qf.web;
 
 import com.qf.bean.Users;
-import com.qf.service.CollectService;
-import com.qf.service.EvaluatesService;
-import com.qf.service.OrdersService;
 import com.qf.service.UsersService;
 import com.qf.util.CodeUtil;
 import com.qf.util.DataView;
@@ -26,12 +23,6 @@ import java.util.Map;
 public class UserController {
     @Resource
     private UsersService usersService;
-    @Resource
-    private OrdersService ordersService;
-    @Resource
-    private EvaluatesService evaluatesService;
-    @Resource
-    private CollectService collectService;
 
     /**
      * 登录
@@ -281,8 +272,8 @@ public class UserController {
     }
 
     /*
-     * 我的--信息展示
-     * */
+    * 我的--信息展示
+    * */
     @RequestMapping(value = "api/userinfo/select",method = RequestMethod.GET)
     @ResponseBody
     public Map select(int userid){
@@ -297,38 +288,6 @@ public class UserController {
         map.put("code", 1);
         map.put("msg", "失败");
         map.put("data", users);
-        return map;
-    }
-
-    /**
-     * 个人中心
-     * @param userid
-     * @return
-     */
-    @RequestMapping(method = RequestMethod.GET,value = "api/personlist")
-    @ResponseBody
-    public Map personlist(int userid){
-        Users users = usersService.selectByPrimaryKey(userid);
-        int ordersCount= ordersService.SelectOrdersCount(userid);
-        int obligationcount = ordersService.obligationcount(userid);
-        int delivercount = ordersService.delivercount(userid);
-        int receivingcount = ordersService.receivingcount(userid);
-        int evaluatecount = evaluatesService.evaluatecount(userid);
-        int collectcount = collectService.collectcount(userid);
-        Map map=new HashMap();
-        Map map1=new HashMap();
-        map.put("code",0);
-        map.put("msg","成功");
-        map.put("data",map1);
-        map1.put("userimages",users.getUserimages());
-        map1.put("username",users.getUsername());
-        map1.put("nickname",users.getNickname());
-        map1.put("ordercount",ordersCount);
-        map1.put("obligationcount",obligationcount);
-        map1.put("delivercount",delivercount);
-        map1.put("receivingcount",receivingcount);
-        map1.put("evaluatecount",evaluatecount);
-        map1.put("collectcount",collectcount);
         return map;
     }
 

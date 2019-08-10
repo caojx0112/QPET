@@ -13,9 +13,7 @@ public interface ShoppingTrolleyMapper {
 
     int insertSelective(ShoppingTrolley record);
 
-    ShoppingTrolley selectByPrimaryKey(Integer shopcard);
-
-    List<ShoppingTrolley> selectAll(Integer userid);
+    List<ShoppingTrolley> selectByPrimaryKey(Integer userid);
 
     int updateByPrimaryKeySelective(ShoppingTrolley shoppingTrolley);
 

@@ -5,7 +5,7 @@ import com.qf.bean.Specification;
 import java.util.List;
 
 public interface SpecificationService {
-    List findAll(int shopid);
+    List findAll();
 
     int deleteByPrimaryKey(Integer id);
 

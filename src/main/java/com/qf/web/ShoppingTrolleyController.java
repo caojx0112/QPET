@@ -17,8 +17,7 @@ import java.util.*;
  * 别闹！学习呢！
  */
 @Controller
-public class
-ShoppingTrolleyController  {
+public class ShoppingTrolleyController  {
     @Resource
     private ShoppingTrolleyService shoppingTrolleyService;
     @Resource
@@ -52,7 +51,7 @@ ShoppingTrolleyController  {
     @RequestMapping(method = RequestMethod.GET,value ="api/showshoppingcart" )
     @ResponseBody
     public DataView<ShoppingTrolley> showshoppingcart(int userid){
-        List<ShoppingTrolley> shoppingTrolleys = shoppingTrolleyService.selectAll(userid);
+        List<ShoppingTrolley> shoppingTrolleys = shoppingTrolleyService.selectByPrimaryKey(userid);
         DataView<ShoppingTrolley> dataView=new DataView<ShoppingTrolley>();
         dataView.setMsg("成功");
         dataView.setCode(0);
@@ -73,8 +72,11 @@ ShoppingTrolleyController  {
         Map map1=new HashMap();
         map.put("code",0);
         map.put("msg","成功");
-
-        map1.put("shopmoney",shoppingTrolley1.getShopmoney());
+        Double totalmoney=0.0;
+       Double shopmoney=shoppingTrolley1.getShopmoney();
+       int shopnum=shoppingTrolley1.getShopnum();
+        totalmoney=shopnum*shopmoney;
+        map1.put("shopmoney",totalmoney);
         map.put("data",map1);
         return map;
     }
@@ -104,7 +106,7 @@ ShoppingTrolleyController  {
     @RequestMapping(method = RequestMethod.POST,value = "api/shopaccount")
     @ResponseBody
     public Map shopaccount(int userid, String shoppes,double shopamount){
-        List<Shopaddress> shopaddresses = shopaddressService.selectAdderssByuserid(userid);
+        List<Shopaddress> shopaddresses = shopaddressService.selectByPrimaryKey(userid);
         List<Coupons> coupons = couponsService.selectCoupons(userid);
         int emoney= usersService.selectEmoney(userid);
         int addressid = usersService.selectAddressid(userid);

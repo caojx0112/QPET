@@ -54,13 +54,7 @@
     select 
     <include refid="Base_Column_List" />
     from shopping_trolley
-    where shopcard = #{shopcard,jdbcType=INTEGER}
-  </select>
-  <select id="selectAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select
-   *
-    from shopping_trolley,shoppes
-    where userid = #{userid,jdbcType=INTEGER} and trolleyrstatus=1 and shopping_trolley.shopid=shoppes.shopid
+    where userid = #{userid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from shopping_trolley

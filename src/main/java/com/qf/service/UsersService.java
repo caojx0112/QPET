@@ -15,12 +15,12 @@ public interface UsersService {
 
     int updateByPrimaryKey(Users record);
 
-    int registry(int type,String testbox);
+    int registry(int type, String testbox);
 
     Users login(String username);
 
-    boolean getCodeByEmail(String email,String code);
-    boolean getCodeBySms(String phone,String code);
+    boolean getCodeByEmail(String email, String code);
+    boolean getCodeBySms(String phone, String code);
 
     int setPassword(Users record);
     int selectEmoney(Integer userid);

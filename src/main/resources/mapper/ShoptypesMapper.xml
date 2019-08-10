@@ -12,7 +12,10 @@
     typeid, typename, type, createtime, updatetime
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select typename from shoptypes where typeid = #{typeid,jdbcType=INTEGER}
+    select 
+    <include refid="Base_Column_List" />
+    from shoptypes
+    where typeid = #{typeid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from shoptypes

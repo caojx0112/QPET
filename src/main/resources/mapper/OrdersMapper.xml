@@ -13,24 +13,40 @@
     <result column="orderdesc" jdbcType="VARCHAR" property="orderdesc" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
     <result column="expirationtime" jdbcType="TIMESTAMP" property="expirationtime" />
+    <!--收货地址-->
+    <association property="shopaddress" javaType="com.qf.bean.Shopaddress">
+      <id column="addressid" jdbcType="INTEGER" property="addressid" />
+      <result column="userid" jdbcType="INTEGER" property="userid" />
+      <result column="buyername" jdbcType="VARCHAR" property="buyername" />
+      <result column="buyerphone" jdbcType="VARCHAR" property="buyerphone" />
+      <result column="buyeraddress" jdbcType="VARCHAR" property="buyeraddress" />
+    </association>
+    <!--优惠卷-->
+    <association property="coupons" javaType="com.qf.bean.Coupons">
+      <id column="couponsid" jdbcType="INTEGER" property="couponsid" />
+      <result column="couponsname" jdbcType="VARCHAR" property="couponsname" />
+      <result column="couponsmoney" jdbcType="DOUBLE" property="couponsmoney" />
+      <result column="couponsrental" jdbcType="DOUBLE" property="couponsrental" />
+      <result column="couponsstatus" jdbcType="INTEGER" property="couponsstatus" />
+      <result column="couponsimage" jdbcType="VARCHAR" property="couponsimage" />
+      <result column="begintime" jdbcType="TIMESTAMP" property="begintime" />
+      <result column="endtime" jdbcType="TIMESTAMP" property="endtime" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     orderid, addressid, userid, couponsid, emoney, orderamount, orderstatus, paystatus, 
     orderdesc, createtime, expirationtime
   </sql>
 
-  <select id="SelectOrdersCount" resultType="Integer">
-    select count(*) from orders where userid=#{userid};
+  <!---->
+  <select id="findorderdetail" resultMap="BaseResultMap">
+    select * from orders o,shopaddress a,coupons c where
+    o.addressid=a.addressid and o.couponsid=c.couponsid
+    and orderid=#{orderid}
   </select>
 
-  <select id="obligationcount" resultType="Integer">
-    select count(*) from orders where userid=#{userid} and orderstatus=1 ;
-  </select>
-  <select id="delivercount" resultType="Integer">
-    select count(*) from orders where userid=#{userid} and orderstatus=2 ;
-  </select>
-  <select id="receivingcount" resultType="Integer">
-    select count(*) from orders where userid=#{userid} and orderstatus=3 ;
+  <select id="findbyuserid" resultMap="BaseResultMap">
+    select * from orders where userid=#{userid}
   </select>
 
   <update id="updatepaystatus" parameterType="com.qf.bean.Orders">

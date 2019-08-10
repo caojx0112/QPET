@@ -17,7 +17,6 @@ public interface EvaluatesMapper {
 
     int updateByPrimaryKey(Evaluates record);
 
-    //查看评价数量
     int evaluatecount(Integer userid);
 
     int findStar(int shopid);
@@ -25,4 +24,5 @@ public interface EvaluatesMapper {
     int Count(int shopid);
 
     List findById(int shopid);
+
 }

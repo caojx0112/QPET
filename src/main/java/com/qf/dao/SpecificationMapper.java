@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface SpecificationMapper {
 
-    List findAll(int shopid);
+    List findAll();
     int deleteByPrimaryKey(Integer id);
 
     int insert(Specification record);
