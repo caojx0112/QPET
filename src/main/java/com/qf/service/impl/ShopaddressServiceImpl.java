@@ -13,8 +13,12 @@ import java.util.List;
  */
 @Service
 public class ShopaddressServiceImpl implements ShopaddressService {
+    @Override
+    public List<Shopaddress> selectAdderssByuserid(int userid) {
+        return shopaddressMapper.selectAdderssByuserid(userid);
+    }
 
-   @Resource
+    @Resource
    private ShopaddressMapper shopaddressMapper;
 
 
