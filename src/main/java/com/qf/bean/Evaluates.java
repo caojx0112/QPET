@@ -1,6 +1,7 @@
 package com.qf.bean;
 
 import java.util.Date;
+import java.util.List;
 
 public class Evaluates {
     private Integer evaluateid;
@@ -17,6 +18,14 @@ public class Evaluates {
 
     private Integer starlevel;
 
+    private Users users;
+
+    private Shoppes shoppes;
+
+    private Shopdetail shopdetails;
+
+    private List<Evaluates> evaluates;
+
     public Users getUsers() {
         return users;
     }
@@ -24,8 +33,6 @@ public class Evaluates {
     public void setUsers(Users users) {
         this.users = users;
     }
-
-    private Users users;
 
     public Integer getStarlevel() {
         return starlevel;
@@ -81,5 +88,29 @@ public class Evaluates {
 
     public void setCreatetime(Date createtime) {
         this.createtime = createtime;
+    }
+
+    public Shoppes getShoppes() {
+        return shoppes;
+    }
+
+    public void setShoppes(Shoppes shoppes) {
+        this.shoppes = shoppes;
+    }
+
+    public Shopdetail getShopdetails() {
+        return shopdetails;
+    }
+
+    public void setShopdetails(Shopdetail shopdetails) {
+        this.shopdetails = shopdetails;
+    }
+
+    public List<Evaluates> getEvaluates() {
+        return evaluates;
+    }
+
+    public void setEvaluates(List<Evaluates> evaluates) {
+        this.evaluates = evaluates;
     }
 }

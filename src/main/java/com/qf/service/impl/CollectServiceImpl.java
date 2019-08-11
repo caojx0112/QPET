@@ -14,6 +14,18 @@ import javax.annotation.Resource;
 public class CollectServiceImpl implements CollectService {
     @Resource
     private CollectMapper collectMapper;
+
+
+    @Override
+    public int delete(int userid, int shopid) {
+        return collectMapper.delete1(userid, shopid);
+    }
+
+    @Override
+    public Collect find(int userid, int shopid) {
+        return collectMapper.find(userid, shopid);
+    }
+
     @Override
     public int deleteByPrimaryKey(Integer collectid) {
         return 0;

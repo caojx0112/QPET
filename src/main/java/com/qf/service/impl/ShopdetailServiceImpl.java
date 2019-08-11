@@ -14,7 +14,7 @@ public class ShopdetailServiceImpl implements ShopdetailService {
     private ShopdetailMapper shopdetailMapper;
     @Override
     public Shopdetail findItemimag(int id) {
-        return shopdetailMapper.findItemimag(id);
+        return shopdetailMapper.findItemimag1(id);
     }
 
     @Override

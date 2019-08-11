@@ -17,9 +17,9 @@ public class SpecificationServiceImpl implements SpecificationService {
 
 
     @Override
-    public List findAll() {
+    public List findAll(int shopid) {
 
-        return specificationMapper.findAll();
+        return specificationMapper.findAll( shopid);
     }
 
     @Override

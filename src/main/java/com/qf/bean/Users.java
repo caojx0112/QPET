@@ -28,6 +28,8 @@ public class Users {
 
     private Date updatetime;
 
+    private List<Evaluates>evaluates;
+
     public Integer getUserid() {
         return userid;
     }
@@ -122,5 +124,13 @@ public class Users {
 
     public void setAddressid(Integer addressid) {
         this.addressid = addressid;
+    }
+
+    public List<Evaluates> getEvaluates() {
+        return evaluates;
+    }
+
+    public void setEvaluates(List<Evaluates> evaluates) {
+        this.evaluates = evaluates;
     }
 }

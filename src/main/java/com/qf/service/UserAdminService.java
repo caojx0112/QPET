@@ -4,7 +4,9 @@ import com.qf.bean.UserAdmin;
 
 public interface UserAdminService {
 
-    UserAdmin login(UserAdmin userAdmin);
+    UserAdmin login(String username,String password);
+
+    int update(String password,int id);
 
     int deleteByPrimaryKey(Integer id);
 

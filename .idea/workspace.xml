@@ -2,13 +2,34 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Qpet_ssm:war exploded" />
+      <artifact name="QPET:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a307142-09b8-4da0-99b5-29577411e26a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/ShoptypesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShoptypesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/bean/Evaluates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/bean/Evaluates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/bean/Shoppes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/bean/Shoppes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/bean/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/bean/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShopaddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShopaddressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/dao/CollectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/dao/CollectMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/dao/ShopdetailMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/dao/ShopdetailMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/dao/SpecificationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/dao/SpecificationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/dao/UserAdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/dao/UserAdminMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/CollectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/CollectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/SpecificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/SpecificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/UserAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/UserAdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/CollectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/CollectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/OrdersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShopdetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShopdetailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShoppesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShoppesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/SpecificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/SpecificationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/UserAdminSerrviceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/UserAdminSerrviceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/web/ZzzController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/web/ZzzController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShoptypesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShoptypesMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SpecificationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SpecificationMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -90,88 +111,76 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="423590207">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="31" />
+          <entry key="jsp" value="7" />
+          <entry key="properties" value="1" />
+          <entry key="xml" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="31" />
+          <entry key="JSP" value="7" />
+          <entry key="Properties" value="1" />
+          <entry key="XML" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="75" />
+          <entry key="properties" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="75" />
+          <entry key="Properties" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/web/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="919">
-              <caret line="295" column="23" selection-start-line="295" selection-start-column="23" selection-end-line="295" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/ShopaddressService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShopaddressServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#478#479#0" expanded="true" />
-                <element signature="e#548#549#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/bean/Users.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/web/ZzzController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="156">
+              <caret line="205" column="43" lean-forward="true" selection-start-line="205" selection-start-column="29" selection-end-line="205" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/find.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/update.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" selection-start-line="3" selection-end-line="4" />
+            <state relative-caret-position="142">
+              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CollectMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1603" />
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/finditemimage.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CouponsMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2500">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/EvaluatesMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2511" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/dao/SpecificationMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/itemdetail.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -201,7 +210,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/resources/springmvc.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spring.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qf/service/impl/OrdersService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qf/util/StatusUtils.java" />
@@ -213,7 +221,28 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/EvaluatesMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qf/bean/Orders.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShopaddressServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/service/impl/OrdersServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/bean/Shoppes.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qf/bean/Users.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/bean/Evaluates.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/web/ZzzController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/dao/UserAdminMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/service/UserAdminService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/service/impl/UserAdminSerrviceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/dao/ShopdetailMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShopdetailServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/dao/CollectMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/service/CollectService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/service/impl/CollectServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShoptypesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/service/ShoptypesService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShoppesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ShoptypesMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/dao/SpecificationMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/service/SpecificationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qf/service/impl/SpecificationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/SpecificationMapper.xml" />
       </list>
     </option>
   </component>
@@ -234,7 +263,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="D:/Course/maven/apache-maven-3.3.3-bin/apache-maven-3.3.3" />
-        <option name="userSettingsFile" value="E:\QF\Course\maven\apache-maven-3.3.3-bin\apache-maven-3.3.3\conf\settings.xml" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.6.0\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -264,10 +293,10 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-58" />
-    <option name="y" value="30" />
-    <option name="width" value="1340" />
-    <option name="height" value="770" />
+    <option name="x" value="4" />
+    <option name="y" value="7" />
+    <option name="width" value="1344" />
+    <option name="height" value="870" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -322,7 +351,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -363,43 +391,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="qf" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QPET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QPET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qf" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QPET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QPET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qf" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QPET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QPET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qf" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QPET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QPET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="qf" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -407,38 +398,37 @@
               <item name="QPET" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QPET" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QPET" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565430176222" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565503320170" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="spring" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.qf.service" />
+      <recent name="com.qf.service.impl" />
+      <recent name="com.qf.web" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\acer\第四阶段\QPET\src\main\webapp" />
       <recent name="E:\QF\联合项目---宠物\Project\Qpet_ssm\src\main\resources" />
       <recent name="E:\QF\联合项目---宠物\Project\Qpet_ssm\src\main\java\com\qf" />
     </key>
@@ -548,18 +538,18 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.341" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.34" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
-        <artifact name="Qpet_ssm:war exploded">
+        <artifact name="QPET:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Qpet_ssm_5" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_QPET_4" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -567,10 +557,10 @@
       <predefined_log_file id="Tomcat Host Manager" enabled="false" />
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="59329" />
+        <option name="DEBUG_PORT" value="50351" />
       </RunnerSettings>
       <RunnerSettings RunnerId="JRebel Debug">
-        <option name="DEBUG_PORT" value="59338" />
+        <option name="DEBUG_PORT" value="50352" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -649,7 +639,7 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Qpet_ssm:war exploded" />
+          <artifact name="QPET:war exploded" />
         </option>
       </method>
     </configuration>
@@ -685,6 +675,7 @@
       <workItem from="1563866382891" duration="3770000" />
       <workItem from="1564195702407" duration="1402000" />
       <workItem from="1565430216991" duration="261000" />
+      <workItem from="1565500725352" duration="2541000" />
     </task>
     <task id="LOCAL-00001" summary="项目构建">
       <created>1563868316821</created>
@@ -731,13 +722,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17367000" />
+    <option name="totallyTimeSpent" value="19908000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="704" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24508321" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24979591" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -748,7 +739,7 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.09677419" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25316456" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -756,7 +747,7 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.37173578" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.36914602" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" weight="0.010989011" />
@@ -790,287 +781,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="整合项目-2" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/bean/Orderdetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="999">
-          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ShopaddressMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/dao/ShopaddressMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/dao/EvaluatesMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/bean/Shoppes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="258" column="16" selection-start-line="258" selection-start-column="16" selection-end-line="258" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1088#1089#0" expanded="true" />
-            <element signature="e#1140#1141#0" expanded="true" />
-            <element signature="e#1184#1185#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1247#1248#0" expanded="true" />
-            <element signature="e#1292#1293#0" expanded="true" />
-            <element signature="e#1328#1329#0" expanded="true" />
-            <element signature="e#1363#1364#0" expanded="true" />
-            <element signature="e#1394#1395#0" expanded="true" />
-            <element signature="e#1442#1443#0" expanded="true" />
-            <element signature="e#1515#1516#0" expanded="true" />
-            <element signature="e#1547#1548#0" expanded="true" />
-            <element signature="e#1574#1575#0" expanded="true" />
-            <element signature="e#1615#1616#0" expanded="true" />
-            <element signature="e#1647#1648#0" expanded="true" />
-            <element signature="e#1681#1682#0" expanded="true" />
-            <element signature="e#1710#1711#0" expanded="true" />
-            <element signature="e#1755#1756#0" expanded="true" />
-            <element signature="e#1791#1792#0" expanded="true" />
-            <element signature="e#1826#1827#0" expanded="true" />
-            <element signature="e#1856#1857#0" expanded="true" />
-            <element signature="e#1903#1904#0" expanded="true" />
-            <element signature="e#1941#1942#0" expanded="true" />
-            <element signature="e#1978#1979#0" expanded="true" />
-            <element signature="e#2010#2011#0" expanded="true" />
-            <element signature="e#2061#2062#0" expanded="true" />
-            <element signature="e#2103#2104#0" expanded="true" />
-            <element signature="e#2138#2139#0" expanded="true" />
-            <element signature="e#2169#2170#0" expanded="true" />
-            <element signature="e#2217#2218#0" expanded="true" />
-            <element signature="e#2257#2258#0" expanded="true" />
-            <element signature="e#2292#2293#0" expanded="true" />
-            <element signature="e#2323#2324#0" expanded="true" />
-            <element signature="e#2371#2372#0" expanded="true" />
-            <element signature="e#2411#2412#0" expanded="true" />
-            <element signature="e#2447#2448#0" expanded="true" />
-            <element signature="e#2479#2480#0" expanded="true" />
-            <element signature="e#2529#2530#0" expanded="true" />
-            <element signature="e#2605#2606#0" expanded="true" />
-            <element signature="e#2639#2640#0" expanded="true" />
-            <element signature="e#2669#2670#0" expanded="true" />
-            <element signature="e#2715#2716#0" expanded="true" />
-            <element signature="e#2785#2786#0" expanded="true" />
-            <element signature="e#2823#2824#0" expanded="true" />
-            <element signature="e#2856#2857#0" expanded="true" />
-            <element signature="e#2909#2910#0" expanded="true" />
-            <element signature="e#2953#2954#0" expanded="true" />
-            <element signature="e#2987#2988#0" expanded="true" />
-            <element signature="e#3016#3017#0" expanded="true" />
-            <element signature="e#3061#3062#0" expanded="true" />
-            <element signature="e#3097#3098#0" expanded="true" />
-            <element signature="e#3133#3134#0" expanded="true" />
-            <element signature="e#3165#3166#0" expanded="true" />
-            <element signature="e#3215#3216#0" expanded="true" />
-            <element signature="e#3291#3292#0" expanded="true" />
-            <element signature="e#3328#3329#0" expanded="true" />
-            <element signature="e#3361#3362#0" expanded="true" />
-            <element signature="e#3413#3414#0" expanded="true" />
-            <element signature="e#3492#3493#0" expanded="true" />
-            <element signature="e#3526#3527#0" expanded="true" />
-            <element signature="e#3556#3557#0" expanded="true" />
-            <element signature="e#3602#3603#0" expanded="true" />
-            <element signature="e#3672#3673#0" expanded="true" />
-            <element signature="e#3707#3708#0" expanded="true" />
-            <element signature="e#3738#3739#0" expanded="true" />
-            <element signature="e#3786#3787#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
-            <element signature="e#3895#3896#0" expanded="true" />
-            <element signature="e#3926#3927#0" expanded="true" />
-            <element signature="e#3975#3976#0" expanded="true" />
-            <element signature="e#4015#4016#0" expanded="true" />
-            <element signature="e#4051#4052#0" expanded="true" />
-            <element signature="e#4082#4083#0" expanded="true" />
-            <element signature="e#4131#4132#0" expanded="true" />
-            <element signature="e#4171#4172#0" expanded="true" />
-            <element signature="e#4207#4208#0" expanded="true" />
-            <element signature="e#4238#4239#0" expanded="true" />
-            <element signature="e#4287#4288#0" expanded="true" />
-            <element signature="e#4327#4328#0" expanded="true" />
-            <element signature="e#4360#4361#0" expanded="true" />
-            <element signature="e#4389#4390#0" expanded="true" />
-            <element signature="e#4433#4434#0" expanded="true" />
-            <element signature="e#4500#4501#0" expanded="true" />
-            <element signature="e#4539#4540#0" expanded="true" />
-            <element signature="e#4573#4574#0" expanded="true" />
-            <element signature="e#4628#4629#0" expanded="true" />
-            <element signature="e#4674#4675#0" expanded="true" />
-            <element signature="e#4709#4710#0" expanded="true" />
-            <element signature="e#4742#4743#0" expanded="true" />
-            <element signature="e#4792#4793#0" expanded="true" />
-            <element signature="e#4836#4837#0" expanded="true" />
-            <element signature="e#4872#4873#0" expanded="true" />
-            <element signature="e#4906#4907#0" expanded="true" />
-            <element signature="e#4958#4959#0" expanded="true" />
-            <element signature="e#5004#5005#0" expanded="true" />
-            <element signature="e#5042#5043#0" expanded="true" />
-            <element signature="e#5078#5079#0" expanded="true" />
-            <element signature="e#5134#5135#0" expanded="true" />
-            <element signature="e#5184#5185#0" expanded="true" />
-            <element signature="e#5218#5219#0" expanded="true" />
-            <element signature="e#5250#5251#0" expanded="true" />
-            <element signature="e#5298#5299#0" expanded="true" />
-            <element signature="e#5340#5341#0" expanded="true" />
-            <element signature="e#5378#5379#0" expanded="true" />
-            <element signature="e#5414#5415#0" expanded="true" />
-            <element signature="e#5470#5471#0" expanded="true" />
-            <element signature="e#5520#5521#0" expanded="true" />
-            <element signature="e#5555#5556#0" expanded="true" />
-            <element signature="e#5586#5587#0" expanded="true" />
-            <element signature="e#5634#5635#0" expanded="true" />
-            <element signature="e#5674#5675#0" expanded="true" />
-            <element signature="e#5716#5717#0" expanded="true" />
-            <element signature="e#5753#5754#0" expanded="true" />
-            <element signature="e#5814#5815#0" expanded="true" />
-            <element signature="e#5866#5867#0" expanded="true" />
-            <element signature="e#5900#5901#0" expanded="true" />
-            <element signature="e#5930#5931#0" expanded="true" />
-            <element signature="e#5976#5977#0" expanded="true" />
-            <element signature="e#6014#6015#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/bean/Eva.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UsersMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/util/CodeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/dao/CollectMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/bean/Collect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/impl/CollectServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/OrdersService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/dao/OrdersMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UsersCouponsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/OrderdetailMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/impl/UsersServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/UsersService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-212">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../QPET-cb0e98d583d3302bf0ebbbeb8ec4e1413b1e5164/src/main/java/com/qf/service/impl/OrdersServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/web/ZzzController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-900">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="25" column="11" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/db.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Qpet_ssm.iml" />
-    <entry file="file://$PROJECT_DIR$/target/Qpet_ssm/WEB-INF/classes/db.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/Qpet_ssm/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/springmvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-567" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/spring.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1093,24 +803,10 @@
         <state relative-caret-position="-2511" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/web/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="919">
-          <caret line="295" column="23" selection-start-line="295" selection-start-column="23" selection-end-line="295" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/web/ShoppingTrolleyController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="51" column="55" selection-start-line="51" selection-start-column="55" selection-end-line="51" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" selection-start-line="3" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -1157,23 +853,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/TestConn.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CollectMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1603" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/EvaluatesMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2511" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/impl/OrdersServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/OrdersMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1188">
@@ -1181,28 +860,322 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/web/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7202">
+          <caret line="297" column="9" selection-start-line="297" selection-start-column="9" selection-end-line="297" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/ShopaddressService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="63" />
+        <state relative-caret-position="468">
+          <caret line="20" column="63" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShopaddressServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="416">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CollectMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CouponsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/EvaluatesMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/impl/OrdersServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="182" column="8" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="21" />
           <folding>
-            <element signature="e#478#479#0" expanded="true" />
-            <element signature="e#548#549#0" expanded="true" />
+            <element signature="e#6184#6185#0" expanded="true" />
+            <element signature="e#6212#6213#0" expanded="true" />
+            <element signature="e#6277#6278#0" expanded="true" />
+            <element signature="e#6304#6305#0" expanded="true" />
+            <element signature="e#6369#6370#0" expanded="true" />
+            <element signature="e#6396#6397#0" expanded="true" />
+            <element signature="e#6460#6461#0" expanded="true" />
+            <element signature="e#6488#6489#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/bean/Collect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/bean/Shoppes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1083#1084#0" expanded="true" />
+            <element signature="e#1131#1132#0" expanded="true" />
+            <element signature="e#1171#1172#0" expanded="true" />
+            <element signature="e#1213#1214#0" expanded="true" />
+            <element signature="e#1250#1251#0" expanded="true" />
+            <element signature="e#1311#1312#0" expanded="true" />
+            <element signature="e#1363#1364#0" expanded="true" />
+            <element signature="e#2812#2813#0" expanded="true" />
+            <element signature="e#2856#2857#0" expanded="true" />
+            <element signature="e#4970#4971#0" expanded="true" />
+            <element signature="e#5000#5001#0" expanded="true" />
+            <element signature="e#5046#5047#0" expanded="true" />
+            <element signature="e#5084#5085#0" expanded="true" />
+            <element signature="e#5122#5123#0" expanded="true" />
+            <element signature="e#5158#5159#0" expanded="true" />
+            <element signature="e#5214#5215#0" expanded="true" />
+            <element signature="e#5264#5265#0" expanded="true" />
+            <element signature="e#5298#5299#0" expanded="true" />
+            <element signature="e#5330#5331#0" expanded="true" />
+            <element signature="e#5378#5379#0" expanded="true" />
+            <element signature="e#5420#5421#0" expanded="true" />
+            <element signature="e#5458#5459#0" expanded="true" />
+            <element signature="e#5494#5495#0" expanded="true" />
+            <element signature="e#5550#5551#0" expanded="true" />
+            <element signature="e#5600#5601#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/bean/Shopdetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/bean/Shoptypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/bean/Users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="234">
+          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+          <folding>
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#2571#2572#0" expanded="true" />
+            <element signature="e#2603#2604#0" expanded="true" />
+            <element signature="e#2662#2663#0" expanded="true" />
+            <element signature="e#2704#2705#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/bean/Evaluates.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="88" column="8" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1792#1793#0" expanded="true" />
+            <element signature="e#1822#1823#0" expanded="true" />
+            <element signature="e#1869#1870#0" expanded="true" />
+            <element signature="e#1907#1908#0" expanded="true" />
+            <element signature="e#1949#1950#0" expanded="true" />
+            <element signature="e#1983#1984#0" expanded="true" />
+            <element signature="e#2041#2042#0" expanded="true" />
+            <element signature="e#2087#2088#0" expanded="true" />
+            <element signature="e#2132#2133#0" expanded="true" />
+            <element signature="e#2164#2165#0" expanded="true" />
+            <element signature="e#2223#2224#0" expanded="true" />
+            <element signature="e#2265#2266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/dao/UserAdminMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="13" column="67" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/UserAdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/impl/UserAdminSerrviceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="37" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/dao/ShopdetailMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="8" column="67" lean-forward="true" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/ShopdetailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShopdetailServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/dao/CollectMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="12" column="90" selection-start-line="12" selection-start-column="90" selection-end-line="12" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/CollectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/impl/CollectServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#426#427#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShoptypesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ShoptypesMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/dao/EvaluatesMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShoppesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="55" column="39" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/dao/SpecificationMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/SpecificationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/impl/SpecificationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SpecificationMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/service/ShoptypesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/finditemimage.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/itemdetail.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/find.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/update.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/web/ZzzController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="205" column="43" lean-forward="true" selection-start-line="205" selection-start-column="29" selection-end-line="205" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -1212,7 +1185,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>Qpet_ssm:war</last-edited>
+          <last-edited>QPET:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1260,7 +1233,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Qpet_ssm</last-edited>
+          <last-edited>QPET</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
