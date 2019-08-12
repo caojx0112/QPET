@@ -13,6 +13,7 @@ import com.qf.service.SpecificationService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -81,10 +82,10 @@ public class ShoppesServiceImpl implements ShoppesService {
         shoppes.setEvaluates(list);
         return shoppes ;
     }
-
+    @Transactional
     @Override
     public int deleteByPrimaryKey(Integer shopid) {
-        return 0;
+        return shoppesMapper.deleteByPrimaryKey(shopid);
     }
 
     @Override
@@ -92,9 +93,10 @@ public class ShoppesServiceImpl implements ShoppesService {
         return 0;
     }
 
+    @Transactional
     @Override
     public int insertSelective(Shoppes record) {
-        return 0;
+        return shoppesMapper.insertSelective(record);
     }
 
     @Override

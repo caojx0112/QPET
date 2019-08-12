@@ -131,11 +131,13 @@ public class OrdersController {
             System.out.println("realpath:"+realPath);
             Date date = new Date();
             String format = DateFormat.format(date);
-            myfile.transferTo(new File(realPath+"/"+format));
+            String filename = myfile.getOriginalFilename();
+            String s = filename.substring(filename.indexOf("."));
+            myfile.transferTo(new File(realPath+"/"+format+s));
             //String s = realPath = realPath + "/" + myfile.getOriginalFilename();
 
 
-            String url="http://129.28.91.97:8080/Qpet_ssm/image/"+format;
+            String url="http://129.28.91.97:8080/Qpet_ssm/image/"+format+s;
             System.out.println(url);
             evaluates.setEvaluateimage(url);
         } catch (IOException e) {

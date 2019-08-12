@@ -3,6 +3,7 @@ package com.qf.web;
 import com.qf.bean.Shoppes;
 import com.qf.bean.Shoptypes;
 import com.qf.service.ShoppesService;
+import com.qf.service.ShoptypesService;
 import com.qf.util.DataView;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +24,8 @@ import java.util.Map;
 public class ShoppesController {
     @Resource
     private ShoppesService shoppesService;
+    @Resource
+    private ShoptypesService shoptypesService;
 
     //首页全查(首页显示信息)
     @GetMapping("api/animal")
@@ -33,11 +36,11 @@ public class ShoppesController {
         if (list==null){
             map.put("code",1);
             map.put("msg","失败");
-            map.put("date",null);
+            map.put("data",null);
         }else {
             map.put("code",0);
             map.put("msg","成功");
-            map.put("date",list);
+            map.put("data",list);
         }
         return map;
     }
@@ -109,7 +112,7 @@ public class ShoppesController {
         }
         return dataView;
     }
-    //后台页面商品列表
+    //修改商品
     @PostMapping("admin/pet/update")
     public DataView petupdate(Shoppes shoppes){
         int i = shoppesService.updateByPrimaryKeySelective(shoppes);
@@ -122,5 +125,51 @@ public class ShoppesController {
             dataView.setMsg("成功");
         }
         return dataView;
+    }
+    //新增商品
+    @PostMapping("admin/pet/additem")
+    public DataView insertSelective(Shoppes shoppes){
+        int i = shoppesService.insertSelective(shoppes);
+        DataView dataView = new DataView();
+        if (i<0){
+            dataView.setCode(1);
+            dataView.setMsg("失败");
+        }else {
+            dataView.setCode(0);
+            dataView.setMsg("成功");
+        }
+        return dataView;
+    }
+    //删除商品
+    @GetMapping("admin/pet/delete")
+    public DataView deleteByPrimaryKey(Integer shopid){
+        int i = shoppesService.deleteByPrimaryKey(shopid);
+        DataView dataView = new DataView();
+        if (i<0){
+            dataView.setCode(1);
+            dataView.setMsg("失败");
+        }else {
+            dataView.setCode(0);
+            dataView.setMsg("成功");
+        }
+        return dataView;
+    }
+    //删除商品
+    @GetMapping("admin/pet/findbyid")
+    public Map selectByPrimaryKey(Integer shopid,Integer type){
+        Shoppes shoppes = shoppesService.selectByPrimaryKey(shopid);
+        List<Shoptypes> list = shoptypesService.findbytype(type);
+        shoppes.setSpecies(list);
+        Map map = new HashMap();
+        if (shoppes==null){
+            map.put("code",1);
+            map.put("msg","失败");
+            map.put("data",null);
+        }else {
+            map.put("code",0);
+            map.put("msg","成功");
+            map.put("data",shoppes);
+        }
+        return map;
     }
 }

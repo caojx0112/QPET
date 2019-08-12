@@ -20,5 +20,6 @@ public interface ShoptypesService {
 
     //后台页面商品分类
     List<Shoptypes> pet();
-
+    //
+    List<Shoptypes> findbytype(Integer type);
 }

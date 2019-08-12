@@ -8,13 +8,14 @@ import java.util.List;
 
 public interface ShoppesMapper {
     Shoppes findById(int shopid);
-
+    //删除
     int deleteByPrimaryKey(Integer shopid);
 
     int insert(Shoppes record);
-
+    //后台页面添加商品
     int insertSelective(Shoppes record);
 
+    //主键
     Shoppes selectByPrimaryKey(Integer shopid);
 
     //后台页面修改宠物商品
@@ -37,6 +38,7 @@ public interface ShoppesMapper {
 
     //后台页面商品列表信息
     List<Shoptypes> pettype(@Param("typeid")Integer typeid);
+
 
 
 

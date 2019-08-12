@@ -332,4 +332,14 @@ public class Shoppes {
     public void setEvaluatesList(List<Evaluates> evaluatesList) {
         this.evaluatesList = evaluatesList;
     }
+
+    private List species;
+
+    public List getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(List species) {
+        this.species = species;
+    }
 }

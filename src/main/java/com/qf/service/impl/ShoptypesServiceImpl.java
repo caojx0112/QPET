@@ -53,5 +53,10 @@ public class ShoptypesServiceImpl implements ShoptypesService {
         return shoptypesMapper.pet();
     }
 
+    @Override
+    public List<Shoptypes> findbytype(Integer type) {
+        return shoptypesMapper.findbytype(type);
+    }
+
 
 }
