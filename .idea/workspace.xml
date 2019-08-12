@@ -7,18 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a307142-09b8-4da0-99b5-29577411e26a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/bean/Shoppes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/bean/Shoppes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/dao/ShoppesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/dao/ShoppesMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/dao/ShoptypesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/dao/ShoptypesMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/ShoptypesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/ShoptypesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShoppesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShoppesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShoptypesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShoptypesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/web/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/web/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qf/web/ShoppesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qf/web/ShoppesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShoptypesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShoptypesMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Qpet_ssm.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Qpet_ssm.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Qpet_ssm/WEB-INF/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/Qpet_ssm/WEB-INF/classes/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Qpet_ssm/WEB-INF/classes/mapper/ShoptypesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Qpet_ssm/WEB-INF/classes/mapper/ShoptypesMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ShoptypesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ShoptypesMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -87,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="28" selection-start-column="17" selection-end-column="28" />
+            <state relative-caret-position="165">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -201,7 +194,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ShoppesMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qf/web/ShoptypesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qf/web/OrdersController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/qf/service/impl/ShoppesServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qf/dao/ShoppesMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qf/service/ShoppesService.java" />
@@ -211,6 +203,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qf/bean/Shoppes.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qf/web/ShoppesController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ShoptypesMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
       </list>
     </option>
   </component>
@@ -706,7 +699,7 @@
       <workItem from="1565430216991" duration="261000" />
       <workItem from="1565502213377" duration="612000" />
       <workItem from="1565578295778" duration="4767000" />
-      <workItem from="1565590565586" duration="19887000" />
+      <workItem from="1565590565586" duration="20615000" />
     </task>
     <task id="LOCAL-00001" summary="项目构建">
       <created>1563868316821</created>
@@ -743,7 +736,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565603103965</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="潘超-2">
+      <created>1565615126484</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1565615126484</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -767,13 +767,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45590000" />
+    <option name="totallyTimeSpent" value="46318000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="600" y="0" width="1967" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20555846" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20555846" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -812,7 +812,7 @@
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" />
-      <window_info anchor="right" id="Maven" order="12" weight="0.32983744" />
+      <window_info active="true" anchor="right" id="Maven" order="12" visible="true" weight="0.32983744" />
       <window_info anchor="right" id="JRebel Setup Guide" order="13" weight="0.32952777" />
     </layout>
   </component>
@@ -825,7 +825,8 @@
     <MESSAGE value="整合项目-2" />
     <MESSAGE value="张守阔-整合项目-2" />
     <MESSAGE value="潘超-1" />
-    <option name="LAST_COMMIT_MESSAGE" value="潘超-1" />
+    <MESSAGE value="潘超-2" />
+    <option name="LAST_COMMIT_MESSAGE" value="潘超-2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qf/bean/Users.java" />
@@ -1110,8 +1111,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="17" selection-end-column="28" />
+        <state relative-caret-position="165">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>

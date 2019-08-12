@@ -42,7 +42,7 @@
   </sql>
 
   <select id="pet" resultMap="BaseResultMap">
-    select typeid,typename,type FROM shoptypes WHERE type=1
+    select typeid,typename,type FROM shoptypes WHERE type=#{type }
   </select>
   <select id="findbytype" resultMap="BaseResultMap">
     select * from shoptypes where type =#{type}
