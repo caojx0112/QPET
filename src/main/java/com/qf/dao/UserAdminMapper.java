@@ -1,11 +1,18 @@
 package com.qf.dao;
 
 import com.qf.bean.UserAdmin;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 
 public interface UserAdminMapper {
 
-    UserAdmin login(String username);
+    @Update("update user_admin set password=#{password} where id=#{id}")
+    int update1(@Param(value = "password") String password, @Param(value = "id") int id);
+
+    @Select("select username,password from user_admin where username=#{username}")
+    UserAdmin login1(@Param(value = "username") String username);
 
     int deleteByPrimaryKey(Integer id);
 

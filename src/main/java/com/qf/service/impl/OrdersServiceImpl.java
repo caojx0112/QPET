@@ -177,6 +177,26 @@ public class OrdersServiceImpl implements OrdersService {
     public int receivingcount(Integer userid) {
         return ordersMapper.receivingcount(userid);
     }
+
+    @Override
+    public boolean evaluate(Evaluates evaluates) {
+        return false;
+    }
+
+    @Override
+    public List<OrdersList> findall(int userid) {
+        return null;
+    }
+
+    @Override
+    public Orders findbyorderid(String orderid) {
+        return null;
+    }
+
+    @Override
+    public boolean deleteorder(String orderid) {
+        return false;
+    }
 }
 
 

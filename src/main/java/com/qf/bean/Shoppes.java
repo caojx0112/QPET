@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Shoppes {
+    private String  dogtype;
     private List evaluateimage;
 
     private List evaluates;
@@ -57,6 +58,26 @@ public class Shoppes {
     private Date putawaytime;
 
     private String shopweight;  //商品规格
+
+    private String feedback;
+
+    private Integer evaluatescount;
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
+    }
+
+    public Integer getEvaluatescount() {
+        return evaluatescount;
+    }
+
+    public void setEvaluatescount(Integer evaluatescount) {
+        this.evaluatescount = evaluatescount;
+    }
 
     public String getShopweight() {
         return shopweight;
@@ -248,5 +269,37 @@ public class Shoppes {
 
     public void setPutawaytime(Date putawaytime) {
         this.putawaytime = putawaytime;
+    }
+
+    public String getDogtype() {
+        return dogtype;
+    }
+
+    public void setDogtype(String dogtype) {
+        this.dogtype = dogtype;
+    }
+
+    public List getEvaluateimage() {
+        return evaluateimage;
+    }
+
+    public void setEvaluateimage(List evaluateimage) {
+        this.evaluateimage = evaluateimage;
+    }
+
+    public List getEvaluates() {
+        return evaluates;
+    }
+
+    public void setEvaluates(List evaluates) {
+        this.evaluates = evaluates;
+    }
+
+    public List getSpecification() {
+        return specification;
+    }
+
+    public void setSpecification(List specification) {
+        this.specification = specification;
     }
 }

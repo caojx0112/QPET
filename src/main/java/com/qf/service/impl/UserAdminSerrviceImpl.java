@@ -17,14 +17,24 @@ public class UserAdminSerrviceImpl implements UserAdminService {
     private UserAdminMapper userAdminMapper;
 
     @Override
-    public UserAdmin login(UserAdmin userAdmin) {
-        Md5Hash md5Hash=new Md5Hash(userAdmin.getPassword(),"",1);
-        UserAdmin login = userAdminMapper.login(userAdmin.getUsername());
+    public UserAdmin login(String username,String password) {
+        Md5Hash md5Hash=new Md5Hash(password,"",1);
+        UserAdmin login = userAdminMapper.login1(username);
         if (login!=null&&md5Hash.toString().equals(login.getPassword())){
             return login;
         }
         return null;
     }
+
+
+    @Override
+    public int update(String password,int id) {
+        Md5Hash md5Hash=new Md5Hash(password,"",1);
+
+        return userAdminMapper.update1(md5Hash.toString(),id);
+
+    }
+
 
     @Override
     public int deleteByPrimaryKey(Integer id) {

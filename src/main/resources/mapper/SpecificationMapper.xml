@@ -10,13 +10,13 @@
     <result column="shopmoney" jdbcType="DOUBLE" property="shopmoney" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, shopid, shopwegiht, shopnum,spestatus, shopmoney
+    id, shopwegiht, shopnum, shopmoney, spestatus
   </sql>
 
   <select id="findAll" resultMap="BaseResultMap">
     select
-    id, shopwegiht, shopnum, shopmoney, spestatus
-    from specification
+    <include refid="Base_Column_List"/>
+    from specification where shopid=#{shopid}
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">

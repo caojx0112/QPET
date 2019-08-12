@@ -33,10 +33,11 @@ public class ZzzController {
     @Resource
     private CollectService collectMapperService;
 
+    //登录 注解
     @RequestMapping(value = "/admin/login", method = RequestMethod.POST)
     @ResponseBody
-    public Map login(UserAdmin userAdmin) {
-        UserAdmin login = userAdminMapperService.login(userAdmin);
+    public Map login(String username,String password) {
+        UserAdmin login = userAdminMapperService.login(username,password);
         if (login == null) {
 //
             Map map = new HashMap();
@@ -50,7 +51,7 @@ public class ZzzController {
             map.put("code", 0);
             map.put("msg", "成功");
             Map map1 = new HashMap();
-            map1.put("username", userAdmin.getUsername());
+            map1.put("username",login.getUsername());
             map.put("data", map1);
 
             return map;
@@ -64,32 +65,36 @@ public class ZzzController {
         session.invalidate();
     }
 
+//修改密码 注解
     @RequestMapping(value = "admin/updatepassword", method = RequestMethod.POST)
     @ResponseBody
-    public Map updatepassword(UserAdmin userAdmin) {
-
-        int i = userAdminMapperService.updateByPrimaryKeySelective(userAdmin);
-        if (i > 0) {
-            Map map = new HashMap();
-            map.put("code", 0);
-            map.put("msg", "成功");
-
-            return map;
-        } else {
+    public Map update(String password,Integer id){
+        int i = userAdminMapperService.update(password,id);
+        if (i==0){
             Map map = new HashMap();
             map.put("code", 1);
             map.put("msg", "失败");
 
             return map;
-        }
+        } else {
+            Map map = new HashMap();
+            map.put("code", 0);
+            map.put("msg", "成功");
 
+            return map;
+        }
     }
+
+
+
 
     //商品详情
     @RequestMapping(value = "api/itemdetail", method = RequestMethod.GET)
     @ResponseBody
     public Map itemdetail(int shopid) {
         Shoppes shoppes = shoppesMapperService.findById(shopid);
+
+
 
         if (shoppes == null) {
 
@@ -151,6 +156,7 @@ public class ZzzController {
 
     }
 
+    //上拉查看商品详情  注解
     @RequestMapping(value = "api/itemimage", method = RequestMethod.GET)
     @ResponseBody
     public Map itemimage(int id) {
@@ -177,7 +183,26 @@ public class ZzzController {
 
     }
 
+    //是否收藏该商品 //注解
+    @RequestMapping(value = "api/selectcollect", method = RequestMethod.GET)
+    @ResponseBody
+    public Map select(int userid,int shopid){
+        Collect collect = collectMapperService.find(userid, shopid);
+        if (collect==null){
+            Map map = new HashMap();
+            map.put("code", 1);
+            map.put("msg", "未收藏");
 
+            return map;
+        } else {
+            Map map = new HashMap();
+            map.put("code", 0);
+            map.put("msg", "已收藏");
+            return map;
+        }
+    }
+
+//购物车新增 注解
     @RequestMapping(value = "api/addcollect", method = RequestMethod.GET)
     @ResponseBody
     public Map addcollect(int userid,int shopid){
@@ -188,6 +213,27 @@ public class ZzzController {
         int insert = collectMapperService.insert(collect);
 
         if (insert == 0) {
+//
+            Map map = new HashMap();
+            map.put("code", 1);
+            map.put("msg", "失败");
+
+            return map;
+        } else {
+            Map map = new HashMap();
+            map.put("code", 0);
+            map.put("msg", "成功");
+            return map;
+        }
+    }
+// 取消收藏 注解
+    @RequestMapping(value = "api/deletecollect", method = RequestMethod.GET)
+    @ResponseBody
+    public Map delete(int userid,int shopid){
+
+        int delete = collectMapperService.delete(userid, shopid);
+
+        if (delete == 0) {
 //
             Map map = new HashMap();
             map.put("code", 1);
