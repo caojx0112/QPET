@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.SpecificationMapper">
+  <resultMap id="BaseResultMap" type="com.qf.bean.Specification">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="shopid" jdbcType="INTEGER" property="shopid" />
+    <result column="shopwegiht" jdbcType="VARCHAR" property="shopwegiht" />
+    <result column="shopnum" jdbcType="INTEGER" property="shopnum" />
+    <result column="spestatus" jdbcType="INTEGER" property="spestatus" />
+    <result column="shopmoney" jdbcType="DOUBLE" property="shopmoney" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, shopwegiht, shopnum, shopmoney, spestatus
+  </sql>
+
+  <select id="findAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from specification where shopid=#{shopid}
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from specification
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from specification
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.bean.Specification">
+    insert into specification (id, shopid, shopwegiht, 
+      shopnum, spestatus,shopmoney)
+    values (#{id,jdbcType=INTEGER}, #{shopid,jdbcType=INTEGER}, #{shopwegiht,jdbcType=VARCHAR}, 
+      #{shopnum,jdbcType=INTEGER},#{spestatus,jdbcType=INTEGER}, #{shopmoney,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.bean.Specification">
+    insert into specification
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="shopid != null">
+        shopid,
+      </if>
+      <if test="shopwegiht != null">
+        shopwegiht,
+      </if>
+      <if test="shopnum != null">
+        shopnum,
+      </if>
+      <if test="spestatus != null">
+        spestatus,
+      </if>
+      <if test="shopmoney != null">
+        shopmoney,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="shopid != null">
+        #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="shopwegiht != null">
+        #{shopwegiht,jdbcType=VARCHAR},
+      </if>
+      <if test="shopnum != null">
+        #{shopnum,jdbcType=INTEGER},
+      </if>
+      <if test="spestatus != null">
+        #{spestatus,jdbcType=INTEGER},
+      </if>
+      <if test="shopmoney != null">
+        #{shopmoney,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.bean.Specification">
+    update specification
+    <set>
+      <if test="shopid != null">
+        shopid = #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="shopwegiht != null">
+        shopwegiht = #{shopwegiht,jdbcType=VARCHAR},
+      </if>
+      <if test="shopnum != null">
+        shopnum = #{shopnum,jdbcType=INTEGER},
+      </if>
+      <if test="spestatus != null">
+        spestatus = #{spestatus,jdbcType=INTEGER},
+      </if>
+      <if test="shopmoney != null">
+        shopmoney = #{shopmoney,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.bean.Specification">
+    update specification
+    set shopid = #{shopid,jdbcType=INTEGER},
+      shopwegiht = #{shopwegiht,jdbcType=VARCHAR},
+      shopnum = #{shopnum,jdbcType=INTEGER},
+      spestatus = #{spestatus,jdbcType=INTEGER},
+      shopmoney = #{shopmoney,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

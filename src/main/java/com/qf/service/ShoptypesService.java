@@ -2,6 +2,8 @@ package com.qf.service;
 
 import com.qf.bean.Shoptypes;
 
+import java.util.List;
+
 
 public interface ShoptypesService {
     int deleteByPrimaryKey(Integer typeid);
@@ -15,4 +17,8 @@ public interface ShoptypesService {
     int updateByPrimaryKeySelective(Shoptypes record);
 
     int updateByPrimaryKey(Shoptypes record);
+
+    //后台页面商品分类
+    List<Shoptypes> pet();
+
 }

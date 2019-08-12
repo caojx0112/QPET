@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.EvaluatesMapper">
+  <resultMap id="BaseResultMap" type="com.qf.bean.Evaluates">
+    <id column="evaluateid" jdbcType="INTEGER" property="evaluateid" />
+    <result column="shopid" jdbcType="INTEGER" property="shopid" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="evaluateimage" jdbcType="VARCHAR" property="evaluateimage" />
+    <result column="starlevel" jdbcType="INTEGER" property="starlevel" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <association property="shoppes" javaType="com.qf.bean.Shoppes">
+      <id column="shopid" jdbcType="INTEGER" property="shopid" />
+      <result column="shopname" jdbcType="VARCHAR" property="shopname" />
+      <result column="type" jdbcType="INTEGER" property="type" />
+      <result column="typeid" jdbcType="INTEGER" property="typeid" />
+      <result column="shopnum" jdbcType="INTEGER" property="shopnum" />
+      <result column="shopsales" jdbcType="INTEGER" property="shopsales" />
+      <result column="oldprice" jdbcType="DOUBLE" property="oldprice" />
+      <result column="newprice" jdbcType="DOUBLE" property="newprice" />
+      <result column="shopimage" jdbcType="VARCHAR" property="shopimage" />
+      <result column="content" jdbcType="VARCHAR" property="content" />
+      <result column="shopstatus" jdbcType="INTEGER" property="shopstatus" />
+      <result column="emoney" jdbcType="INTEGER" property="emoney" />
+      <result column="petbodily" jdbcType="VARCHAR" property="petbodily" />
+      <result column="woollength" jdbcType="VARCHAR" property="woollength" />
+      <result column="pettype" jdbcType="VARCHAR" property="pettype" />
+      <result column="petcolor" jdbcType="VARCHAR" property="petcolor" />
+      <result column="petblood" jdbcType="INTEGER" property="petblood" />
+      <result column="petclean" jdbcType="INTEGER" property="petclean" />
+      <result column="petvideo" jdbcType="INTEGER" property="petvideo" />
+      <result column="recipe" jdbcType="VARCHAR" property="recipe" />
+      <result column="suitableage" jdbcType="INTEGER" property="suitableage" />
+      <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+      <result column="putawaytime" jdbcType="TIMESTAMP" property="putawaytime" />
+    </association>
+    <association property="users" javaType="com.qf.bean.Users">
+      <id column="userid" jdbcType="INTEGER" property="userid"/>
+      <result column="username" jdbcType="VARCHAR" property="username"/>
+      <result column="nickname" jdbcType="VARCHAR" property="nickname"/>
+      <result column="password" jdbcType="VARCHAR" property="password"/>
+      <result column="userimages" jdbcType="VARCHAR" property="userimages"/>
+      <result column="usersex" jdbcType="VARCHAR" property="usersex"/>
+      <result column="birthday" jdbcType="DATE" property="birthday"/>
+      <result column="emoney" jdbcType="DOUBLE" property="emoney"/>
+      <result column="userstatus" jdbcType="INTEGER" property="userstatus"/>
+      <result column="createtime" jdbcType="TIMESTAMP" property="createtime"/>
+      <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime"/>
+    </association>
+    <association property="shopdetails" javaType="com.qf.bean.Shopdetail">
+      <id column="shopdeatilid" jdbcType="INTEGER" property="shopdeatilid" />
+      <result column="detailimages" jdbcType="VARCHAR" property="detailimages" />
+      <result column="shopid" jdbcType="INTEGER" property="shopid" />
+    </association>
+
+  </resultMap>
+  <sql id="Base_Column_List">
+    evaluateid, shopid, userid, evaluateimage,starlevel, content, createtime
+  </sql>
+  <select id="evaluatecount" resultType="java.lang.Integer">
+    select count(*) from evaluates where userid=#{userid};
+  </select>
+
+
+
+  <select id="findById" resultMap="BaseResultMap">
+    select * from evaluates e,users u where e.userid=u.userid and e.shopid=#{shopid}
+  </select>
+
+  <select id="findStar" resultType="Integer">
+        select starlevel from evaluates where 1=1 and starlevel<![CDATA[>=]]> 3 and shopid=#{shopid}
+    </select>
+
+  <select id="Count" resultType="Integer" >
+        select count(shopid) from evaluates where shopid=#{shopid}
+    </select>
+
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from evaluates
+    where evaluateid = #{evaluateid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from evaluates
+    where evaluateid = #{evaluateid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.bean.Evaluates">
+    insert into evaluates (evaluateid, shopid, userid, 
+      evaluateimage,starlevel, content, createtime
+      )
+    values (#{evaluateid,jdbcType=INTEGER}, #{shopid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, 
+      #{evaluateimage,jdbcType=VARCHAR},#{starlevel,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR},
+      #{createtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.bean.Evaluates">
+    insert into evaluates
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="evaluateid != null">
+        evaluateid,
+      </if>
+      <if test="shopid != null">
+        shopid,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="evaluateimage != null">
+        evaluateimage,
+      </if>
+      <if test="starlevel != null">
+        starlevel,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="evaluateid != null">
+        #{evaluateid,jdbcType=INTEGER},
+      </if>
+      <if test="shopid != null">
+        #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="evaluateimage != null">
+        #{evaluateimage,jdbcType=VARCHAR},
+      </if>
+      <if test="starlevel != null">
+        #{starlevel,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.bean.Evaluates">
+    update evaluates
+    <set>
+      <if test="shopid != null">
+        shopid = #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="evaluateimage != null">
+        evaluateimage = #{evaluateimage,jdbcType=VARCHAR},
+      </if>
+      <if test="starlevel != null">
+        starlevel = #{starlevel,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where evaluateid = #{evaluateid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.bean.Evaluates">
+    update evaluates
+    set shopid = #{shopid,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=INTEGER},
+      evaluateimage = #{evaluateimage,jdbcType=VARCHAR},
+      starlevel = #{starlevel,jdbcType=INTEGER},
+      content = #{content,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP}
+    where evaluateid = #{evaluateid,jdbcType=INTEGER}
+  </update>
+</mapper>

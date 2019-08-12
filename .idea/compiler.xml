@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="QPET" />
-        <module name="Qpet" />
         <module name="Qpet_ssm" />
+        <module name="Qpet" />
+        <module name="q萌" />
       </profile>
     </annotationProcessing>
   </component>

@@ -60,4 +60,16 @@ public class Specification {
     public void setShopmoney(Double shopmoney) {
         this.shopmoney = shopmoney;
     }
+
+
+
+    private Shoppes shoppes;
+
+    public Shoppes getShoppes() {
+        return shoppes;
+    }
+
+    public void setShoppes(Shoppes shoppes) {
+        this.shoppes = shoppes;
+    }
 }

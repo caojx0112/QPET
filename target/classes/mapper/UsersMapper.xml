@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.qf.bean.Users">
+    <id column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="userimages" jdbcType="VARCHAR" property="userimages" />
+    <result column="usersex" jdbcType="VARCHAR" property="usersex" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="emoney" jdbcType="INTEGER" property="emoney" />
+    <result column="userstatus" jdbcType="INTEGER" property="userstatus" />
+    <result column="addressid" jdbcType="INTEGER" property="addressid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userid, username, nickname, password, userimages, usersex, birthday, emoney, userstatus,addressid,
+    createtime, updatetime
+  </sql>
+  <select id="selectByUsername" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from users
+    where username=#{username}
+  </select>
+  <update id="setPassword" parameterType="com.qf.bean.Users">
+    update users
+    set password=#{password,jdbcType=VARCHAR}
+    where username = #{username,jdbcType=VARCHAR}
+  </update>
+  <select id="selectEmoney" parameterType="java.lang.Integer" resultType="Integer">
+    select emoney from users where userid = #{userid}
+  </select>
+  <select id="selectAddressid" parameterType="java.lang.Integer" resultType="Integer">
+    select addressid from users where userid = #{userid}
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from users
+    where userid = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from users
+    where userid = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.bean.Users">
+    insert into users (userid, username, nickname, 
+      password, userimages, usersex, 
+      birthday, emoney, userstatus, 
+      createtime, updatetime)
+    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{userimages,jdbcType=VARCHAR}, #{usersex,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=DATE}, #{emoney,jdbcType=INTEGER}, #{userstatus,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.bean.Users">
+    insert into users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="userimages != null">
+        userimages,
+      </if>
+      <if test="usersex != null">
+        usersex,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="emoney != null">
+        emoney,
+      </if>
+      <if test="userstatus != null">
+        userstatus,
+      </if>
+      <if test="addressid != null">
+        addressid,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userimages != null">
+        #{userimages,jdbcType=VARCHAR},
+      </if>
+      <if test="usersex != null">
+        #{usersex,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="emoney != null">
+        #{emoney,jdbcType=INTEGER},
+      </if>
+      <if test="userstatus != null">
+        #{userstatus,jdbcType=INTEGER},
+      </if>
+      <if test="addressid != null">
+        #{addressid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.bean.Users">
+    update users
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userimages != null">
+        userimages = #{userimages,jdbcType=VARCHAR},
+      </if>
+      <if test="usersex != null">
+        usersex = #{usersex,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="emoney != null">
+        emoney = #{emoney,jdbcType=INTEGER},
+      </if>
+      <if test="userstatus != null">
+        userstatus = #{userstatus,jdbcType=INTEGER},
+      </if>
+      <if test="addressid != null">
+        addressid = #{addressid,jdbcType=INTEGER},
+    </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.bean.Users">
+    update users
+    set username = #{username,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      userimages = #{userimages,jdbcType=VARCHAR},
+      usersex = #{usersex,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      emoney = #{emoney,jdbcType=INTEGER},
+      userstatus = #{userstatus,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+</mapper>

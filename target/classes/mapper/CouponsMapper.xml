@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.CouponsMapper">
+  <resultMap id="BaseResultMap" type="com.qf.bean.Coupons">
+    <id column="couponsid" jdbcType="INTEGER" property="couponsid" />
+    <result column="couponsname" jdbcType="VARCHAR" property="couponsname" />
+    <result column="couponsmoney" jdbcType="DOUBLE" property="couponsmoney" />
+    <result column="couponsrental" jdbcType="DOUBLE" property="couponsrental" />
+    <result column="couponsstatus" jdbcType="INTEGER" property="couponsstatus" />
+    <result column="couponsimage" jdbcType="VARCHAR" property="couponsimage" />
+    <result column="begintime" jdbcType="TIMESTAMP" property="begintime" />
+    <result column="endtime" jdbcType="TIMESTAMP" property="endtime" />
+    <collection property="usersCouponsList" ofType="com.qf.bean.UsersCoupons">
+      <id column="ucouponsid" jdbcType="INTEGER" property="ucouponsid" />
+      <result column="userid" jdbcType="INTEGER" property="userid" />
+      <result column="couponsid" jdbcType="INTEGER" property="couponsid" />
+      <result column="couponstatus" jdbcType="INTEGER" property="couponstatus" />
+    </collection>
+  </resultMap>
+  <sql id="Base_Column_List">
+    couponsid, couponsname, couponsmoney, couponsrental, couponsstatus, couponsimage, 
+    begintime, endtime
+  </sql>
+  <select id="selectCoupons" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    *
+    from coupons,users_coupons
+    where users_coupons.couponsid=coupons.couponsid and userid = #{userid,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from coupons
+    where couponsid = #{couponsid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from coupons
+    where couponsid = #{couponsid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.bean.Coupons">
+    insert into coupons (couponsid, couponsname, couponsmoney, 
+      couponsrental, couponsstatus, couponsimage, 
+      begintime, endtime)
+    values (#{couponsid,jdbcType=INTEGER}, #{couponsname,jdbcType=VARCHAR}, #{couponsmoney,jdbcType=DOUBLE}, 
+      #{couponsrental,jdbcType=DOUBLE}, #{couponsstatus,jdbcType=INTEGER}, #{couponsimage,jdbcType=VARCHAR}, 
+      #{begintime,jdbcType=TIMESTAMP}, #{endtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.bean.Coupons">
+    insert into coupons
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="couponsid != null">
+        couponsid,
+      </if>
+      <if test="couponsname != null">
+        couponsname,
+      </if>
+      <if test="couponsmoney != null">
+        couponsmoney,
+      </if>
+      <if test="couponsrental != null">
+        couponsrental,
+      </if>
+      <if test="couponsstatus != null">
+        couponsstatus,
+      </if>
+      <if test="couponsimage != null">
+        couponsimage,
+      </if>
+      <if test="begintime != null">
+        begintime,
+      </if>
+      <if test="endtime != null">
+        endtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="couponsid != null">
+        #{couponsid,jdbcType=INTEGER},
+      </if>
+      <if test="couponsname != null">
+        #{couponsname,jdbcType=VARCHAR},
+      </if>
+      <if test="couponsmoney != null">
+        #{couponsmoney,jdbcType=DOUBLE},
+      </if>
+      <if test="couponsrental != null">
+        #{couponsrental,jdbcType=DOUBLE},
+      </if>
+      <if test="couponsstatus != null">
+        #{couponsstatus,jdbcType=INTEGER},
+      </if>
+      <if test="couponsimage != null">
+        #{couponsimage,jdbcType=VARCHAR},
+      </if>
+      <if test="begintime != null">
+        #{begintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.bean.Coupons">
+    update coupons
+    <set>
+      <if test="couponsname != null">
+        couponsname = #{couponsname,jdbcType=VARCHAR},
+      </if>
+      <if test="couponsmoney != null">
+        couponsmoney = #{couponsmoney,jdbcType=DOUBLE},
+      </if>
+      <if test="couponsrental != null">
+        couponsrental = #{couponsrental,jdbcType=DOUBLE},
+      </if>
+      <if test="couponsstatus != null">
+        couponsstatus = #{couponsstatus,jdbcType=INTEGER},
+      </if>
+      <if test="couponsimage != null">
+        couponsimage = #{couponsimage,jdbcType=VARCHAR},
+      </if>
+      <if test="begintime != null">
+        begintime = #{begintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        endtime = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where couponsid = #{couponsid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.bean.Coupons">
+    update coupons
+    set couponsname = #{couponsname,jdbcType=VARCHAR},
+      couponsmoney = #{couponsmoney,jdbcType=DOUBLE},
+      couponsrental = #{couponsrental,jdbcType=DOUBLE},
+      couponsstatus = #{couponsstatus,jdbcType=INTEGER},
+      couponsimage = #{couponsimage,jdbcType=VARCHAR},
+      begintime = #{begintime,jdbcType=TIMESTAMP},
+      endtime = #{endtime,jdbcType=TIMESTAMP}
+    where couponsid = #{couponsid,jdbcType=INTEGER}
+  </update>
+</mapper>

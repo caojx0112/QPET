@@ -6,6 +6,7 @@ import com.qf.service.ShoptypesService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 @Service
@@ -26,7 +27,7 @@ public class ShoptypesServiceImpl implements ShoptypesService {
 
     @Override
     public int insertSelective(Shoptypes record) {
-        return 0;
+        return shoptypesMapper.insertSelective(record);
     }
 
     @Override
@@ -43,4 +44,14 @@ public class ShoptypesServiceImpl implements ShoptypesService {
     public int updateByPrimaryKey(Shoptypes record) {
         return 0;
     }
+
+
+
+
+    @Override
+    public List<Shoptypes> pet() {
+        return shoptypesMapper.pet();
+    }
+
+
 }

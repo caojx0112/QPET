@@ -63,6 +63,7 @@ public class Shoppes {
 
     private Integer evaluatescount;
 
+
     public String getFeedback() {
         return feedback;
     }
@@ -301,5 +302,34 @@ public class Shoppes {
 
     public void setSpecification(List specification) {
         this.specification = specification;
+    }
+
+
+    private List<Specification> specificationList;
+    private Shoptypes shoptypes;
+    private List<Evaluates> evaluatesList;
+
+    public List<Specification> getSpecificationList() {
+        return specificationList;
+    }
+
+    public void setSpecificationList(List<Specification> specificationList) {
+        this.specificationList = specificationList;
+    }
+
+    public Shoptypes getShoptypes() {
+        return shoptypes;
+    }
+
+    public void setShoptypes(Shoptypes shoptypes) {
+        this.shoptypes = shoptypes;
+    }
+
+    public List<Evaluates> getEvaluatesList() {
+        return evaluatesList;
+    }
+
+    public void setEvaluatesList(List<Evaluates> evaluatesList) {
+        this.evaluatesList = evaluatesList;
     }
 }

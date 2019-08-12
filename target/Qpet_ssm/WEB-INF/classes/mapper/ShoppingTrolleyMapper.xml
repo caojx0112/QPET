@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.ShoppingTrolleyMapper">
+  <resultMap id="BaseResultMap" type="com.qf.bean.ShoppingTrolley">
+    <id column="shopcard" jdbcType="INTEGER" property="shopcard" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="trolleyrstatus" jdbcType="INTEGER" property="trolleyrstatus" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="shopid" jdbcType="INTEGER" property="shopid" />
+    <result column="shopnum" jdbcType="INTEGER" property="shopnum" />
+    <result column="shopmoney" jdbcType="DOUBLE" property="shopmoney" />
+    <result column="specification" jdbcType="INTEGER" property="specification" />
+    <association property="shoppes" javaType="com.qf.bean.Shoppes">
+      <id column="shopid" jdbcType="INTEGER" property="shopid" />
+      <result column="shopname" jdbcType="VARCHAR" property="shopname" />
+      <result column="type" jdbcType="INTEGER" property="type" />
+      <result column="typeid" jdbcType="INTEGER" property="typeid" />
+      <result column="shopnum" jdbcType="INTEGER" property="shopnum" />
+      <result column="shopsales" jdbcType="INTEGER" property="shopsales" />
+      <result column="oldprice" jdbcType="DOUBLE" property="oldprice" />
+      <result column="newprice" jdbcType="DOUBLE" property="newprice" />
+      <result column="shopimage" jdbcType="VARCHAR" property="shopimage" />
+      <result column="content" jdbcType="VARCHAR" property="content" />
+      <result column="shopstatus" jdbcType="INTEGER" property="shopstatus" />
+      <result column="emoney" jdbcType="INTEGER" property="emoney" />
+      <result column="petbodily" jdbcType="VARCHAR" property="petbodily" />
+      <result column="woollength" jdbcType="VARCHAR" property="woollength" />
+      <result column="pettype" jdbcType="VARCHAR" property="pettype" />
+      <result column="petcolor" jdbcType="VARCHAR" property="petcolor" />
+      <result column="petblood" jdbcType="INTEGER" property="petblood" />
+      <result column="petclean" jdbcType="INTEGER" property="petclean" />
+      <result column="petvideo" jdbcType="INTEGER" property="petvideo" />
+      <result column="recipe" jdbcType="VARCHAR" property="recipe" />
+      <result column="suitableage" jdbcType="INTEGER" property="suitableage" />
+      <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+      <result column="putawaytime" jdbcType="TIMESTAMP" property="putawaytime" />
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List">
+    shopcard, userid, trolleyrstatus, createtime, updatetime, shopid, shopnum, shopmoney,specification
+  </sql>
+
+  <select id="selectShoppes" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select *
+      from shopping_trolley,shoppes where shopcard=#{shopcard} and shopping_trolley.shopid=shoppes.shopid
+  </select>
+
+  <select id="selectShoppingTrolley" parameterType="Map" resultMap="BaseResultMap">
+    select * from shopping_trolley where userid=#{userid} and shopid=#{shopid}
+  </select>
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from shopping_trolley
+    where shopcard = #{shopcard,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+   *
+    from shopping_trolley,shoppes
+    where userid = #{userid,jdbcType=INTEGER} and trolleyrstatus=1 and shopping_trolley.shopid=shoppes.shopid
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from shopping_trolley
+    where shopcard = #{shopcard,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.bean.ShoppingTrolley">
+    insert into shopping_trolley (shopcard, userid, trolleyrstatus, 
+      createtime, updatetime, shopid, 
+      shopnum, shopmoney)
+    values (#{shopcard,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{trolleyrstatus,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, #{shopid,jdbcType=INTEGER}, 
+      #{shopnum,jdbcType=INTEGER}, #{shopmoney,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.bean.ShoppingTrolley">
+    insert into shopping_trolley
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="shopcard != null">
+        shopcard,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="trolleyrstatus != null">
+        trolleyrstatus,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+      <if test="shopid != null">
+        shopid,
+      </if>
+      <if test="shopnum != null">
+        shopnum,
+      </if>
+      <if test="shopmoney != null">
+        shopmoney,
+      </if>
+      <if test="specification != null">
+        specification,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="shopcard != null">
+        #{shopcard,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="trolleyrstatus != null">
+        #{trolleyrstatus,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shopid != null">
+        #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="shopnum != null">
+        #{shopnum,jdbcType=INTEGER},
+      </if>
+      <if test="shopmoney != null">
+        #{shopmoney,jdbcType=DOUBLE},
+      </if>
+      <if test="specification != null">
+        #{specification,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <!--  Integer userid,Integer shopid,Integer shopnum -->
+  <update id="updateByPrimaryKeySelective"
+          parameterType="com.qf.bean.ShoppingTrolley"
+          >
+    update shopping_trolley
+    <set>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="trolleyrstatus != null">
+        trolleyrstatus = #{trolleyrstatus,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shopid != null">
+        shopid = #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="shopnum != null">
+        shopnum = #{shopnum,jdbcType=INTEGER},
+      </if>
+      <if test="shopmoney != null">
+        shopmoney = #{shopmoney,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=INTEGER} and shopid = #{shopid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.bean.ShoppingTrolley">
+    update shopping_trolley
+    set userid = #{userid,jdbcType=INTEGER},
+      trolleyrstatus = #{trolleyrstatus,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      shopid = #{shopid,jdbcType=INTEGER},
+      shopnum = #{shopnum,jdbcType=INTEGER},
+      shopmoney = #{shopmoney,jdbcType=DOUBLE}
+    where shopcard = #{shopcard,jdbcType=INTEGER}
+  </update>
+</mapper>
