@@ -2,6 +2,8 @@ package com.qf.dao;
 
 import com.qf.bean.Orders;
 
+import java.util.List;
+
 public interface OrdersMapper {
 
     int  updatepaystatus(Orders orders);
@@ -25,4 +27,8 @@ public interface OrdersMapper {
     public int delivercount(Integer userid);
     //查看待收货数量
     public int receivingcount(Integer userid);
+
+    List<Orders> findbyuserid(int userid);
+
+    Orders findorderdetail(String orderid);
 }
