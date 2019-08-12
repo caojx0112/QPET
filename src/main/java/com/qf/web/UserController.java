@@ -302,5 +302,38 @@ public class UserController {
         return map;
     }
 
+    /**
+     * 个人中心
+     * @param userid
+     * @return
+     */
+    @RequestMapping(method = RequestMethod.GET,value = "api/personlist")
+    @ResponseBody
+    public Map personlist(int userid){
+        Users users = usersService.selectByPrimaryKey(userid);
+        int ordersCount= ordersService.SelectOrdersCount(userid);
+        int obligationcount = ordersService.obligationcount(userid);
+        int delivercount = ordersService.delivercount(userid);
+        int receivingcount = ordersService.receivingcount(userid);
+        int evaluatecount = evaluatesService.evaluatecount(userid);
+        int collectcount = collectService.collectcount(userid);
+        Map map=new HashMap();
+        Map map1=new HashMap();
+        map.put("code",0);
+        map.put("msg","成功");
+        map.put("data",map1);
+        map1.put("userimages",users.getUserimages());
+        map1.put("username",users.getUsername());
+        map1.put("nickname",users.getNickname());
+        map1.put("ordercount",ordersCount);
+        map1.put("obligationcount",obligationcount);
+        map1.put("delivercount",delivercount);
+        map1.put("receivingcount",receivingcount);
+        map1.put("evaluatecount",evaluatecount);
+        map1.put("collectcount",collectcount);
+        return map;
+    }
+
+
 
 }
