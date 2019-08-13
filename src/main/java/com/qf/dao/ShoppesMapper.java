@@ -31,7 +31,7 @@ public interface ShoppesMapper {
     //搜索填充
     List<String> fill(@Param("shopname") String shopname, @Param("type")Integer type);
     //热门搜索
-    List<String> findHot();
+    List<String> findHot(@Param("type")Integer type);
 
     //搜索功能( 上架时间  排序方式  商品种类     价格筛选    销量筛选 )
     List<Shoppes> find(@Param("shopname")String shopname,@Param("type")Integer type,@Param("sort1")Integer sort1,@Param("sort2")Integer sort2,@Param("sort3")Integer sort3,@Param("sort4")Integer sort4,@Param("sort5")Integer sort5);

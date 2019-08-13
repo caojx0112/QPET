@@ -10,6 +10,7 @@ import com.qf.dao.ShoppesMapper;
 import com.qf.dao.ShoptypesMapper;
 import com.qf.service.ShoppesService;
 import com.qf.service.SpecificationService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -165,8 +166,8 @@ public class ShoppesServiceImpl implements ShoppesService {
     }
     //热门搜索
     @Override
-    public List<String> findHot() {
-        return shoppesMapper.findHot();
+    public List<String> findHot(@Param("type")Integer type) {
+        return shoppesMapper.findHot(type);
     }
 
 

@@ -353,13 +353,14 @@
   </select>
 
   <select id="findHot" resultType="java.lang.String">
-    SELECT shopname FROM shoppes  ORDER BY  RAND() LIMIT 10
+    SELECT shopname FROM shoppes
+      <if test="type!=null">where type=#{type }</if> ORDER BY  RAND() LIMIT 10
   </select>
 
   <select id="find" resultMap="BaseResultMap" parameterType="java.util.Map">
     <!--select shopid,count(*) from evaluates  GROUP BY shopid-->
 
-    select * from shoppes s,specification sp,shoptypes st,evaluates e where   shopname like '%${shopname}%'
+    select * from shoppes s,specification sp,shoptypes st,evaluates e where shopname like '%${shopname}%'
     <if test="type!=1 and type!=2 and type!=3">
 
       <if test="sort1==1 and sort2==2">order by shopsales desc </if>   <!--1.默认人气-->
@@ -375,7 +376,7 @@
       <if test="sort1==4 and sort3==3">and newprice >= 3000</if><!--价格高于3k-->
     </if>
     <if test="type==1">
-      and type =1
+      and s.type =1
       <if test="sort1==1 and sort2==2">order by shopsales desc </if>   <!--1.默认人气-->
       <if test="sort1==1 and sort2==3">order by putawaytime desc </if> <!--默认 上架时间-->
       <!--<if test="sort1==1 and sort2==4"></if>-->
@@ -392,7 +393,7 @@
       <if test="sort1==4 and sort4==3">and newprice >= 3000</if><!--价格高于3k-->
     </if>
     <if test="type==2"><!--宠粮搜索-->
-      and type =2 and s.shopid = sp.shopid
+      and s.type =2 and s.shopid = sp.shopid
       <if test="sort1==1 and sort2==2">order by shopsales desc </if>   <!--1.默认人气-->
       <if test="sort1==1 and sort2==3">order by putawaytime desc </if> <!--默认 上架时间-->
       <if test="sort1==1 and sort2==4"></if>

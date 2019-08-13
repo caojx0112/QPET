@@ -62,8 +62,8 @@ public class ShoppesController {
     }
     //热门搜索
     @GetMapping("api/hotserch")
-    public DataView findHot(){
-        List<String> list = shoppesService.findHot();
+    public DataView findHot(Integer type){
+        List<String> list = shoppesService.findHot(type);
         DataView dataView = new DataView();
         if (list==null){
             dataView.setCode(1);
